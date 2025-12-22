@@ -3,16 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://dl6havuxgbdmf" path="res://assets/textures/_AAD77626-5036-4C59-A56E-7EF23512C09B_-removebg-preview.png" id="1_kikvd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjlel"]
-size = Vector2(305, 420)
+size = Vector2(213, 294)
 
 [node name="Card" type="Node2D"]
 
 [node name="cardImg" type="Sprite2D" parent="."]
 position = Vector2(2, 15)
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_kikvd")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-3.5, 12)
+position = Vector2(-1.5, 13)
 shape = SubResource("RectangleShape2D_rjlel")
