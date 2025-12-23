@@ -1,15 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cy0kxo4qwjmkk"]
+[gd_scene load_steps=6 format=3 uid="uid://cy0kxo4qwjmkk"]
 
 [ext_resource type="Texture2D" uid="uid://dxa7milbds7ca" path="res://assets/textures/2302.w062.n005.47B.p1.47.png" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://boprvk1roxmxj" path="res://scenes/worldOne.gd" id="1_tbgi4"]
 [ext_resource type="Script" uid="uid://dh12oswoie4rs" path="res://cardManager.gd" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://vx77l1i1m1hc" path="res://scenes/card.tscn" id="3_jyhfs"]
 [ext_resource type="Script" uid="uid://c44egv1jlxjyg" path="res://playerHand.gd" id="3_tbgi4"]
 
-[node name="Main" type="Control"]
+[node name="worldOne" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+script = ExtResource("1_tbgi4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
