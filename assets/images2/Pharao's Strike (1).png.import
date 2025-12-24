@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ea2se50yjh6i"
-path="res://.godot/imported/_EBC64AA8-F7BD-4B73-BAC4-D0640027D553_-removebg-preview.png-5879cc8deb168314b03e61a3021a54ca.ctex"
+uid="uid://wiqr0x8vwyg3"
+path="res://.godot/imported/Pharao's Strike (1).png-57f5168ec9148871aa886e9274eafb47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/_EBC64AA8-F7BD-4B73-BAC4-D0640027D553_-removebg-preview.png"
-dest_files=["res://.godot/imported/_EBC64AA8-F7BD-4B73-BAC4-D0640027D553_-removebg-preview.png-5879cc8deb168314b03e61a3021a54ca.ctex"]
+source_file="res://assets/images2/Pharao's Strike (1).png"
+dest_files=["res://.godot/imported/Pharao's Strike (1).png-57f5168ec9148871aa886e9274eafb47.ctex"]
 
 [params]
 

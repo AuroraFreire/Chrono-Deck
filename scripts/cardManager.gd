@@ -37,6 +37,7 @@ func finish_drag():
 		card_being_dragged.position = card_slot_found.position
 		card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
 		card_slot_found.card_in_slot = true
+	card_being_dragged = null
 
 func connect_card_signals(card):
 	card.connect("hovered", on_hovered_over_card)

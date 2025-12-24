@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dl6havuxgbdmf"
-path="res://.godot/imported/_AAD77626-5036-4C59-A56E-7EF23512C09B_-removebg-preview.png-faab8009fb107223e7966577ea4cf41d.ctex"
+uid="uid://cau83pecdn1oy"
+path="res://.godot/imported/Solar Blade.png-68a4ba4b92161c6a442df7eea3de5413.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/_AAD77626-5036-4C59-A56E-7EF23512C09B_-removebg-preview.png"
-dest_files=["res://.godot/imported/_AAD77626-5036-4C59-A56E-7EF23512C09B_-removebg-preview.png-faab8009fb107223e7966577ea4cf41d.ctex"]
+source_file="res://assets/images2/Solar Blade.png"
+dest_files=["res://.godot/imported/Solar Blade.png-68a4ba4b92161c6a442df7eea3de5413.ctex"]
 
 [params]
 
