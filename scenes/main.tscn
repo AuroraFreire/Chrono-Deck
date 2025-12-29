@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cy0kxo4qwjmkk"]
+[gd_scene load_steps=14 format=3 uid="uid://cy0kxo4qwjmkk"]
 
 [ext_resource type="Texture2D" uid="uid://dxa7milbds7ca" path="res://assets/images2/eraOneBg.png" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://boprvk1roxmxj" path="res://scripts/worldOne.gd" id="1_tbgi4"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://cwnqri6l7wwiy" path="res://assets/images2/_8EF5FA7C-6356-4BDA-AB74-23D32B1816DD_-removebg-preview.png" id="7_o6xl0"]
 [ext_resource type="Script" uid="uid://bip7hv0c652mm" path="res://scenes/deck.gd" id="7_tipki"]
 [ext_resource type="Script" uid="uid://bw37wu5hoaijs" path="res://scenes/input_manager.gd" id="9_85g3d"]
+[ext_resource type="Script" uid="uid://bgyhse4hp6qvj" path="res://scenes/texture_progress_bar.gd" id="10_choun"]
+[ext_resource type="Texture2D" uid="uid://1f6b24pjwa4d" path="res://assets/images2/Under.png" id="10_trceg"]
+[ext_resource type="Texture2D" uid="uid://d4i2dkqek2qv3" path="res://assets/images2/Progress.png" id="12_jkv2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6xl0"]
 size = Vector2(330, 455)
@@ -23,10 +26,10 @@ script = ExtResource("1_tbgi4")
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -2
 layout_mode = 0
-offset_left = -501.0
-offset_top = -11.0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = -496.0
+offset_top = -27.0
+offset_right = 1925.0
+offset_bottom = 1064.0
 texture = ExtResource("1_sugp2")
 expand_mode = 3
 
@@ -58,13 +61,27 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_o6xl0")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Deck"]
-modulate = Color(0.9997354, 0.99999994, 0.9001897, 1)
-offset_left = -146.15384
-offset_top = -226.1538
-offset_right = -129.23076
-offset_bottom = -203.07689
+modulate = Color(0.999735, 1, 0.90019, 1)
+offset_left = -146.154
+offset_top = -226.154
+offset_right = -129.231
+offset_bottom = -203.077
 scale = Vector2(3.3, 3.3)
 text = "0"
 
 [node name="inputManager" type="Node2D" parent="."]
 script = ExtResource("9_85g3d")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 390.0
+offset_top = 39.0
+offset_right = 1375.0
+offset_bottom = 140.0
+max_value = 60.0
+value = 60.0
+texture_under = ExtResource("10_trceg")
+texture_progress = ExtResource("12_jkv2x")
+script = ExtResource("10_choun")
+total_time = 60.0
