@@ -102,5 +102,3 @@ offset_bottom = 23.0
 
 [node name="Timer" type="Timer" parent="Countdown"]
 wait_time = 61.0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

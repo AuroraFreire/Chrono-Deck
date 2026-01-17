@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dck6fiwb2ha08"
+path="res://.godot/imported/what is left.wav-fc7165308a078aa1dd9bc9e4509671bc.sample"
+
+[deps]
+
+source_file="res://assets/music/what is left.wav"
+dest_files=["res://.godot/imported/what is left.wav-fc7165308a078aa1dd9bc9e4509671bc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

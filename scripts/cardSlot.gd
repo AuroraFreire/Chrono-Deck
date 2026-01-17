@@ -7,7 +7,7 @@ var current_card = null
 @onready var card_manager = $"../cardManager"
 
 func _ready() -> void:
-	healthbar.init_health(75)
+	healthbar.init_health(200)
 
 func take_damage():
 	if card_in_slot:

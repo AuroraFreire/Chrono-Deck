@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://3lb71whrhhxt"]
+[gd_scene load_steps=9 format=3 uid="uid://3lb71whrhhxt"]
 
+[ext_resource type="Script" uid="uid://c57sn8fkvddxn" path="res://scripts/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://hlnj7itrdnjo" path="res://assets/images2/MainScreen.png" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://s8vk632id5e7" path="res://assets/images2/Chrono_Deck_Logo.png" id="2_bqqt6"]
 
@@ -16,6 +17,26 @@ corner_radius_bottom_left = 40
 shadow_size = 5
 shadow_offset = Vector2(0, 3.67)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0.47397572, 0.47397572, 0.47397572, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_size = 5
+shadow_offset = Vector2(0, 3.67)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtw2f"]
+bg_color = Color(0.6313726, 0.6313726, 0.6313726, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_size = 5
+shadow_offset = Vector2(0, 3.67)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oa1go"]
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -23,14 +44,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bqqt6")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_wu84c")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MainButtons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -38,45 +60,113 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -213.0
-offset_top = 68.0
+offset_top = 30.0
 offset_right = 212.5
-offset_bottom = 426.5
+offset_bottom = 388.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 13
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Button" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8ln24")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8ln24")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rtw2f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oa1go")
 text = "Play"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Button2" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8ln24")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8ln24")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rtw2f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oa1go")
 text = "Options"
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="Button3" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8ln24")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8ln24")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rtw2f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oa1go")
 text = "Exit
 "
 
 [node name="ChronoDeckLogo" type="Sprite2D" parent="."]
-position = Vector2(963.00006, 313)
+position = Vector2(957, 300)
 scale = Vector2(1.4144045, 1.4554217)
 texture = ExtResource("2_bqqt6")
+
+[node name="Options" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -404.0
+offset_top = -220.25
+offset_right = 404.0
+offset_bottom = 220.25
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Options"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 98.25
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 51
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="Options"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.5
+offset_top = -106.25
+offset_right = 78.5
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rtw2f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oa1go")
+text = "Back
+"
+
+[connection signal="pressed" from="MainButtons/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MainButtons/Button2" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainButtons/Button3" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Options/Back" to="." method="_on_back_options_pressed"]
