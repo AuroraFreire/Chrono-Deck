@@ -1,6 +1,6 @@
 extends Control
 
-@onready var text_label = $text
+@onready var text_label = $Text
 @onready var voice = $Voice
 
 var current_segment = 0
@@ -9,9 +9,18 @@ var typing_speed = 0.067
 var typing_timer: Timer
 var pause_timer: Timer
 var text_segments = [
-	{"text": "I used to think time was something you lost slowly", "pause_after": 0.5},
-	{"text": "Days passing.. Moments slipping away", "pause_after": 0.1},
-	{"text": "more text that i still have to think", "pause_after": 0.1}
+	{"text": "", "pause_after": 0.35},
+	{"text": "I used to think time was something you lost slowly,", "pause_after": 1.0},
+	{"text": "Days passing.. Moments slipping away.", "pause_after": 0.5},
+	{"text": "I was wrong.", "pause_after": 1.0},
+	{"text": "Time doesn't fade... it's taken,", "pause_after": 1.0},
+	{"text": "The Chronarcs took it.", "pause_after": 1.9},
+	{"text": "They locked it in place... and called it order.", "pause_after": 1.0},
+	{"text": "Now every second matters,", "pause_after": 1.0},
+	{"text": "Not because it's rare.. but because it hurts to spend.", "pause_after": 1.0},
+	{"text": "I can't stop that,", "pause_after": 1.0},
+	{"text": "I can only point the way.", "pause_after": 1.5},
+	{"text": "Use what we have left.", "pause_after": 1.0}
 ]
 
 func _ready() -> void:
@@ -58,3 +67,6 @@ func _on_pause_finished():
 
 func _process(delta: float) -> void:
 	pass
+
+
+#im so pissed of rn, I jsut lost the 43m of work that I did today

@@ -199,7 +199,6 @@ audio_bus_name = "Music"
 
 [node name="menu_song" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_wu84c")
-volume_db = -6.7
 autoplay = true
 bus = &"Music"
 
