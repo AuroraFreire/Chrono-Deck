@@ -9,18 +9,13 @@ var typing_speed = 0.1
 var typing_timer: Timer
 var pause_timer: Timer
 var text_segments = [
-	{"text": "I used to think time was something you lost slowly,", "pause_after": 1.0},
-	{"text": "Days passing.. Moments slipping away.", "pause_after": 0.5},
-	{"text": "I was wrong.", "pause_after": 1.0},
-	{"text": "Time doesn't fade... it's taken,", "pause_after": 1.0},
-	{"text": "The Chronarcs took it.", "pause_after": 1.9},
-	{"text": "They locked it in place... and called it order.", "pause_after": 1.0},
-	{"text": "Now every second matters,", "pause_after": 1.0},
-	{"text": "Not because it's rare.. but because it hurts to spend.", "pause_after": 1.0},
-	{"text": "I can't stop that,", "pause_after": 1.0},
-	{"text": "I can only point the way.", "pause_after": 1.5},
-	{"text": "Use what we have left.", "pause_after": 1.0},
-	{"text": " ", "pause_after": 0.4}
+	{"text": "Congrats! You just won!", "pause_after": 1.0},
+	{"text": "HAHAHA, jk", "pause_after": 0.7},
+	{"text": "Time is now broken because of you", "pause_after": 0.4},
+	{"text": "They won.", "pause_after": 1.0},
+	{"text": "You couldn't even do your own mission", "pause_after": 0.5},
+	{"text": "Another useless creation.", "pause_after": 1.0},
+	{"text": "", "pause_after": 0.3}
 ]
 
 func _ready() -> void:
@@ -69,8 +64,8 @@ func _on_typing_timer():
 func _on_pause_finished():
 	current_segment += 1
 	start_next_segment()
-	if current_segment == 12:
-		get_tree().change_scene_to_file("res://scenes/main.tscn")
+	if current_segment == 7:
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func _process(delta: float) -> void:
 	pass

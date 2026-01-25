@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cy0kxo4qwjmkk"]
+[gd_scene load_steps=13 format=3 uid="uid://cy0kxo4qwjmkk"]
 
 [ext_resource type="Texture2D" uid="uid://dxa7milbds7ca" path="res://assets/images2/eraOneBg.png" id="1_sugp2"]
-[ext_resource type="Script" uid="uid://boprvk1roxmxj" path="res://scripts/worldOne.gd" id="1_tbgi4"]
 [ext_resource type="Script" uid="uid://dh12oswoie4rs" path="res://scripts/cardManager.gd" id="2_jyhfs"]
 [ext_resource type="Script" uid="uid://c44egv1jlxjyg" path="res://scripts/playerHand.gd" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b7com6bidfl48" path="res://scenes/CardSlot.tscn" id="3_tefeu"]
@@ -21,7 +20,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
-script = ExtResource("1_tbgi4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -2

@@ -2,7 +2,7 @@ extends Node2D
 
 const CARD_SCENE_PATH = "res://scenes/card.tscn"
 
-var player_deck = ["PharaoStrike","PharaoStrike", "PharaoStrike"]
+var player_deck = ["PharaoStrike","SolarBlade", "SandShield", "SolarStasis", "PraySun"]
 
 func _ready() -> void:
 	$RichTextLabel.text = str(player_deck.size()) 
