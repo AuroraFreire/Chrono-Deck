@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d16k7rrp7ru85"]
 
-[ext_resource type="Script" uid="uid://chsvgn2k63sok" path="res://scripts/endgame_animation.gd" id="1_ky17b"]
+[ext_resource type="Script" uid="uid://chsvgn2k63sok" path="res://scripts/Cutscenes/endgame_animation.gd" id="1_ky17b"]
 [ext_resource type="AudioStream" uid="uid://bnnl58ksf1dfv" path="res://assets/music/typewriter-typing-68696-_mp3cut.net___cut_0sec_.wav" id="2_jund0"]
 [ext_resource type="Shader" uid="uid://2w751dfggw1r" path="res://scenes/glitch_animation.gdshader" id="3_kvt40"]
 [ext_resource type="Texture2D" uid="uid://68fxkldijxwg" path="res://assets/images2/BlackScreen.png" id="4_i4mps"]

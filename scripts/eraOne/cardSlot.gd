@@ -15,10 +15,12 @@ var card_effect = ""
 @onready var end_turn: Button = $"../endTurn"
 @onready var timer: Timer = $"../Countdown/Timer"
 @onready var ambient_song: AudioStreamPlayer = $"../AmbientSong"
+@onready var options: Panel = $"../Options"
+@onready var hand = $"../Hand"
 
 
 func _ready() -> void:
-	healthbar.init_health(100)
+	healthbar.init_health(75)
 	deck_reference = $"../Deck"
 
 func place_card(card):
@@ -30,6 +32,7 @@ func place_card(card):
 
 func take_damage():
 	if card_in_slot:
+		card_per_time()
 		if current_card_image_path == "res://assets/card_images/PharaoStrike.png":
 			healthbar.health -= 15
 			texture_progress_bar.reduce_time(6)
@@ -42,12 +45,20 @@ func take_damage():
 			healthbar.health -= 9
 			texture_progress_bar.reduce_time(4)
 			delete_card()
-		elif card_in_slot == "res://assets/card_images/SandShield.png":
+		elif current_card_image_path == "res://assets/card_images/SandShield.png":
 			card_effect = "SandShield"
 			delete_card()
-		elif card_in_slot == "res://assets/card_images/SolarStasis.png":
+		elif current_card_image_path == "res://assets/card_images/SolarStasis.png":
 			card_effect = "SolarStasis"
 			delete_card()
+
+func card_per_time():
+	options.process_mode = Node.PROCESS_MODE_ALWAYS
+	end_turn.process_mode = Node.PROCESS_MODE_ALWAYS
+	texture_progress_bar.process_mode = Node.PROCESS_MODE_ALWAYS
+	timer.process_mode = Node.PROCESS_MODE_ALWAYS
+	ambient_song.process_mode = Node.PROCESS_MODE_ALWAYS
+	get_tree().paused = true
 
 func delete_card():
 	if current_card:
@@ -57,6 +68,7 @@ func delete_card():
 
 
 func _on_end_turn_pressed() -> void:
+	options.process_mode = Node.PROCESS_MODE_ALWAYS
 	end_turn.process_mode = Node.PROCESS_MODE_ALWAYS
 	texture_progress_bar.process_mode = Node.PROCESS_MODE_ALWAYS
 	timer.process_mode = Node.PROCESS_MODE_ALWAYS

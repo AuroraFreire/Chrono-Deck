@@ -1,18 +1,18 @@
-[gd_scene load_steps=27 format=3 uid="uid://cy0kxo4qwjmkk"]
+[gd_scene load_steps=27 format=3 uid="uid://bnluf0hdvqf3e"]
 
-[ext_resource type="Script" uid="uid://boprvk1roxmxj" path="res://scripts/eraOne/main.gd" id="1_eb6dy"]
-[ext_resource type="Texture2D" uid="uid://dxa7milbds7ca" path="res://assets/images2/eraOneBg.png" id="1_sugp2"]
-[ext_resource type="Script" uid="uid://dh12oswoie4rs" path="res://scripts/eraOne/cardManager.gd" id="2_jyhfs"]
-[ext_resource type="Script" uid="uid://c44egv1jlxjyg" path="res://scripts/eraOne/playerHand.gd" id="3_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://b7com6bidfl48" path="res://scenes/CardSlot.tscn" id="3_tefeu"]
-[ext_resource type="Script" uid="uid://cgk8ha5125c7t" path="res://scripts/eraOne/cardSlot.gd" id="4_o6xl0"]
-[ext_resource type="Texture2D" uid="uid://cwnqri6l7wwiy" path="res://assets/images2/_8EF5FA7C-6356-4BDA-AB74-23D32B1816DD_-removebg-preview.png" id="7_o6xl0"]
-[ext_resource type="Script" uid="uid://bip7hv0c652mm" path="res://scripts/eraOne/deck.gd" id="7_tipki"]
-[ext_resource type="Script" uid="uid://bw37wu5hoaijs" path="res://scripts/eraOne/input_manager.gd" id="9_85g3d"]
-[ext_resource type="Script" uid="uid://bgyhse4hp6qvj" path="res://scripts/texture_progress_bar.gd" id="10_choun"]
-[ext_resource type="Texture2D" uid="uid://1f6b24pjwa4d" path="res://assets/images2/Under.png" id="10_trceg"]
-[ext_resource type="Texture2D" uid="uid://d4i2dkqek2qv3" path="res://assets/images2/Progress.png" id="12_jkv2x"]
-[ext_resource type="AudioStream" uid="uid://b72tfbhsm7bdi" path="res://assets/music/hidden_temple.wav" id="13_trceg"]
+[ext_resource type="Script" uid="uid://bh6r57qph2vnr" path="res://scripts/Tutorial/mainTutorial.gd" id="1_ej4tf"]
+[ext_resource type="Texture2D" uid="uid://dxa7milbds7ca" path="res://assets/images2/eraOneBg.png" id="2_0hilk"]
+[ext_resource type="PackedScene" uid="uid://b7com6bidfl48" path="res://scenes/CardSlot.tscn" id="3_wr8iv"]
+[ext_resource type="Script" uid="uid://dppnn7bhj616n" path="res://scripts/Tutorial/cardSlotTutorial.gd" id="4_ej4tf"]
+[ext_resource type="Script" uid="uid://dh12oswoie4rs" path="res://scripts/eraOne/cardManager.gd" id="5_vrdqu"]
+[ext_resource type="Script" uid="uid://c44egv1jlxjyg" path="res://scripts/eraOne/playerHand.gd" id="6_cmspm"]
+[ext_resource type="Script" uid="uid://bip7hv0c652mm" path="res://scripts/eraOne/deck.gd" id="7_ikfo1"]
+[ext_resource type="Texture2D" uid="uid://cwnqri6l7wwiy" path="res://assets/images2/_8EF5FA7C-6356-4BDA-AB74-23D32B1816DD_-removebg-preview.png" id="8_dwom6"]
+[ext_resource type="Script" uid="uid://bw37wu5hoaijs" path="res://scripts/eraOne/input_manager.gd" id="9_bl2xa"]
+[ext_resource type="Texture2D" uid="uid://1f6b24pjwa4d" path="res://assets/images2/Under.png" id="10_15kfc"]
+[ext_resource type="Texture2D" uid="uid://d4i2dkqek2qv3" path="res://assets/images2/Progress.png" id="11_7a100"]
+[ext_resource type="Script" uid="uid://bgyhse4hp6qvj" path="res://scripts/texture_progress_bar.gd" id="12_feaue"]
+[ext_resource type="AudioStream" uid="uid://b72tfbhsm7bdi" path="res://assets/music/hidden_temple.wav" id="13_210s6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6xl0"]
 size = Vector2(330, 455)
@@ -136,7 +136,7 @@ corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 shadow_offset = Vector2(0, 3.67)
 
-[node name="eraOne" type="Control"]
+[node name="Tutorial" type="Control"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -149,7 +149,7 @@ offset_right = 960.0
 offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_eb6dy")
+script = ExtResource("1_ej4tf")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -2
@@ -158,27 +158,27 @@ offset_left = -501.0
 offset_top = -11.0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_sugp2")
+texture = ExtResource("2_0hilk")
 expand_mode = 3
 
-[node name="cardSlot" parent="." instance=ExtResource("3_tefeu")]
+[node name="cardSlot" parent="." instance=ExtResource("3_wr8iv")]
 position = Vector2(134, 52)
-script = ExtResource("4_o6xl0")
+script = ExtResource("4_ej4tf")
 
 [node name="cardManager" type="Node2D" parent="."]
-script = ExtResource("2_jyhfs")
+script = ExtResource("5_vrdqu")
 
 [node name="Hand" type="Node2D" parent="."]
-script = ExtResource("3_tbgi4")
+script = ExtResource("6_cmspm")
 
 [node name="Deck" type="Node2D" parent="."]
 z_index = -2
 position = Vector2(150, 890)
 scale = Vector2(0.65, 0.65)
-script = ExtResource("7_tipki")
+script = ExtResource("7_ikfo1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Deck"]
-texture = ExtResource("7_o6xl0")
+texture = ExtResource("8_dwom6")
 
 [node name="Area2D" type="Area2D" parent="Deck"]
 collision_layer = 4
@@ -189,7 +189,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_o6xl0")
 
 [node name="inputManager" type="Node2D" parent="."]
-script = ExtResource("9_85g3d")
+script = ExtResource("9_bl2xa")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -208,9 +208,9 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 max_value = 60.0
 value = 60.0
-texture_under = ExtResource("10_trceg")
-texture_progress = ExtResource("12_jkv2x")
-script = ExtResource("10_choun")
+texture_under = ExtResource("10_15kfc")
+texture_progress = ExtResource("11_7a100")
+script = ExtResource("12_feaue")
 total_time = 60.0
 
 [node name="Countdown" type="Node" parent="."]
@@ -303,7 +303,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_0ld40")
 text = "Main Menu"
 
 [node name="AmbientSong" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_trceg")
+stream = ExtResource("13_210s6")
 volume_db = -6.7
 autoplay = true
 bus = &"Music"
