@@ -221,7 +221,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Timer" type="Timer" parent="Countdown"]
-wait_time = 61.0
+wait_time = 60.5
 
 [node name="Options" type="Panel" parent="."]
 z_index = 5
