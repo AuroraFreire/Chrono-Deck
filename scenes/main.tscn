@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cy0kxo4qwjmkk"]
+[gd_scene load_steps=27 format=3 uid="uid://cy0kxo4qwjmkk"]
 
 [ext_resource type="Script" uid="uid://boprvk1roxmxj" path="res://scenes/main.gd" id="1_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://dxa7milbds7ca" path="res://assets/images2/eraOneBg.png" id="1_sugp2"]
@@ -90,12 +90,51 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.3019608)
+bg_color = Color(0, 0, 0, 0)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqmmt"]
+bg_color = Color(0.24454394, 0.1366652, 0.02952511, 0.6745098)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.10574625, 0.050342955, 0.005513889, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_offset = Vector2(0, 3.67)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yc10j"]
+bg_color = Color(0.18431373, 0.09803922, 0.015686275, 0.83137256)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.105882354, 0.050980393, 0.003921569, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_offset = Vector2(0, 3.67)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jscy8"]
+bg_color = Color(0.25882354, 0.14509805, 0.03137255, 0.8)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.105882354, 0.050980393, 0.003921569, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_offset = Vector2(0, 3.67)
 
 [node name="eraOne" type="Control"]
 layout_mode = 3
@@ -269,5 +308,30 @@ volume_db = -6.7
 autoplay = true
 bus = &"Music"
 
+[node name="endTurn" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -916.0
+offset_top = 121.0
+offset_right = -704.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_gqmmt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_0ld40")
+text = "End Turn"
+
 [connection signal="pressed" from="Options/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Options/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="endTurn" to="cardSlot" method="_on_end_turn_pressed"]

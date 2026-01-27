@@ -6,12 +6,13 @@ const CARD_IMAGES_PATH = "res://assets/card_images/"
 @onready var card_manager = $"../cardManager"
 @onready var hand = $"../Hand"
 
+var image_path = ""
 var card_weights = {
-	"SolarBlade": 50,
-	"SandShield": 40,
-	"PharaoStrike": 35,
-	"PraySun": 30,
-	"SolarStasis": 10
+	"SolarBlade": 30,
+	"SandShield": 26,
+	"PharaoStrike": 26,
+	"PraySun": 23,
+	"SolarStasis": 20
 }
 
 func _ready() -> void:
@@ -23,7 +24,7 @@ func draw_card():
 	var card_name = get_weighted_random_card()
 	var new_card = CARD_SCENE.instantiate()
 	new_card.name = card_name
-	var image_path = CARD_IMAGES_PATH + card_name + ".png"
+	image_path = CARD_IMAGES_PATH + card_name + ".png"
 	if ResourceLoader.exists(image_path):
 		new_card.get_node("cardImg").texture = load(image_path)
 	card_manager.add_child(new_card)
