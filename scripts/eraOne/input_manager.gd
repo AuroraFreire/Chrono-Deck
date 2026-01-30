@@ -8,10 +8,11 @@ const COLLISION_MASK_DECK = 4
 
 var card_manager_reference
 var deck_reference
+var result_collision_mask
 
 func _ready() -> void:
 	card_manager_reference = $"../cardManager"
-	deck_reference = $"../Deck"
+	deck_reference = $"../DeckTutorial"
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -28,7 +29,7 @@ func raycast_at_cursor():
 	parameters.collide_with_areas = true
 	var result = space_state.intersect_point(parameters)
 	if result.size() > 0:
-		var result_collision_mask = result[0].collider.collision_mask
+		result_collision_mask = result[0].collider.collision_mask
 		if result_collision_mask == COLLISION_MASK_CARD:
 			var card_found = result[0].collider.get_parent()
 			if card_found:

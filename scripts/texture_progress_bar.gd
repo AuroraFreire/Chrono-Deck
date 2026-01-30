@@ -33,5 +33,5 @@ func _process(delta: float):
 	time_left = max(time_left, 0.0)
 	value = time_left
 	$"../../Countdown/countdownLabel".text = "%02d:%02d" % time_left_to_zero()
-	if value == 0:
-		get_tree().change_scene_to_file("res://scenes/main.tscn")
+	if value <= 0:
+		get_tree().change_scene_to_file("res://scenes/endgame_animation.tscn")

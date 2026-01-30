@@ -5,15 +5,12 @@ var current_card = null
 var current_card_image_path = ""
 var deck_reference
 var rng = RandomNumberGenerator.new()
+var chronarc_attack
+var card_effect = ""
 
 @onready var healthbar = $Healthbar
-@onready var card_manager = $"../cardManager"
 @onready var texture_progress_bar = $"../CanvasLayer/TextureProgressBar"
-@onready var countdownLabel = $"../Countdown/countdownLabel"
-@onready var end_turn = $"../endTurn"
-@onready var timer = $"../Countdown/Timer"
-@onready var ambient_song = $"../AmbientSong"
-
+@onready var card_slot = $"."
 
 func _ready() -> void:
 	healthbar.init_health(100)
@@ -28,16 +25,25 @@ func place_card(card):
 
 func take_damage():
 	if card_in_slot:
-		if current_card_image_path == "res://assets/card_images/PharaoStrike.png":
+		deck_reference.process_mode = Node.PROCESS_MODE_DISABLED
+		if current_card_image_path == "res://assets/card_images1/PharaoStrike.png":
 			healthbar.health -= 15
 			texture_progress_bar.reduce_time(6)
-		elif current_card_image_path == "res://assets/card_images/PraySun.png":
+			delete_card()
+		elif current_card_image_path == "res://assets/card_images1/PraySun.png":
 			healthbar.health -= 0
 			texture_progress_bar.add_time(5)
-		elif current_card_image_path == "res://assets/card_images/SolarBlade.png":
+			delete_card()
+		elif current_card_image_path == "res://assets/card_images1/SolarBlade.png":
 			healthbar.health -= 9
 			texture_progress_bar.reduce_time(4)
-		delete_card()
+			delete_card()
+		elif current_card_image_path == "res://assets/card_images/SandShield.png":
+			card_effect = "SandShield"
+			delete_card()
+		elif current_card_image_path == "res://assets/card_images/SolarStasis.png":
+			card_effect = "SolarStasis"
+			delete_card()
 
 func delete_card():
 	if current_card:
@@ -46,13 +52,15 @@ func delete_card():
 	card_in_slot = false
 
 func _on_end_turn_pressed() -> void:
-	end_turn.process_mode = Node.PROCESS_MODE_ALWAYS
-	texture_progress_bar.process_mode = Node.PROCESS_MODE_ALWAYS
-	timer.process_mode = Node.PROCESS_MODE_ALWAYS
-	ambient_song.process_mode = Node.PROCESS_MODE_ALWAYS
-	get_tree().paused = true
-	await get_tree().create_timer(0.67).timeout
-	var chronarc_attack = rng.randf_range(4, 13)
+	deck_reference.process_mode = Node.PROCESS_MODE_INHERIT
+	card_slot.process_mode = Node.PROCESS_MODE_DISABLED
+	await get_tree().create_timer(0.67, false).timeout
+	chronarc_attack = rng.randf_range(4, 13)
+	if card_effect == "SandShield":
+		chronarc_attack *= 0.5
+		card_effect = ""
+	if card_effect == "SolarStasis":
+		chronarc_attack = 0
 	texture_progress_bar.reduce_time(chronarc_attack)
-	await get_tree().create_timer(0.67).timeout
-	get_tree().paused = false
+	await get_tree().create_timer(0.67, false).timeout
+	card_slot.process_mode = Node.PROCESS_MODE_INHERIT

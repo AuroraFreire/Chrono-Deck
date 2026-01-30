@@ -8,10 +8,11 @@ const COLLISION_MASK_DECK = 4
 
 var card_manager_reference
 var deck_reference
+var card_count = 0
 
 func _ready() -> void:
 	card_manager_reference = $"../cardManager"
-	deck_reference = $"../Deck"
+	deck_reference = $"../DeckTutorial"
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -20,6 +21,7 @@ func _input(event):
 			raycast_at_cursor()
 		else:
 			emit_signal("left_mouse_button_released")
+			card_count += 1
 
 func raycast_at_cursor():
 	var space_state = get_world_2d().direct_space_state
