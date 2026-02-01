@@ -39,7 +39,7 @@ func delete_card():
 func _on_end_turn_pressed() -> void:
 	deck.process_mode = Node.PROCESS_MODE_INHERIT
 	await get_tree().create_timer(0.67, false).timeout
-	chronarc_attack = rng.randf_range(4, 13)
+	chronarc_attack = rng.randi_range(4, 13)
 	texture_progress_bar.reduce_time(chronarc_attack)
 	await get_tree().create_timer(0.67, false).timeout
 	get_tree().paused = false

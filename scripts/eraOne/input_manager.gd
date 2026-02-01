@@ -12,7 +12,7 @@ var result_collision_mask
 
 func _ready() -> void:
 	card_manager_reference = $"../cardManager"
-	deck_reference = $"../DeckTutorial"
+	deck_reference = $"../Deck"
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
