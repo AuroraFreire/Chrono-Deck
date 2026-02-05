@@ -26,7 +26,6 @@ func take_damage():
 	if card_in_slot:
 		deck.process_mode = Node.PROCESS_MODE_DISABLED
 		healthbar.health -= 15
-		texture_progress_bar.reduce_time(6)
 		delete_card()
 
 func delete_card():

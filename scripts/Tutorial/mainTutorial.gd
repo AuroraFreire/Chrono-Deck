@@ -4,6 +4,7 @@ extends Control
 @onready var tutorial_2 = $Tutorial2
 @onready var tutorial_3 = $Tutorial3
 @onready var tutorial_4 = $Tutorial4
+@onready var tutorial_5 = $Tutorial5
 @onready var speech_box: Panel = $SpeechBox
 @onready var deck = $DeckTutorial
 @onready var card_slot = $cardSlotTutorial
@@ -20,6 +21,7 @@ func _ready() -> void:
 	$SpeechBox/TutorialArrow.visible = false
 	$SpeechBox/RichTextLabel3.visible = false
 	$SpeechBox/RichTextLabel4.visible = false
+	$SpeechBox/RichTextLabel5.visible = false
 	options.process_mode = Node.PROCESS_MODE_ALWAYS
 	deck.process_mode = Node.PROCESS_MODE_DISABLED
 	card_slot.process_mode = Node.PROCESS_MODE_DISABLED
@@ -57,10 +59,15 @@ func _on_next_button_pressed() -> void:
 
 func _on_end_turn_pressed() -> void:
 	texture_progress_bar.process_mode = Node.PROCESS_MODE_INHERIT
-	texture_progress_bar.add_time(card_slot.chronarc_attack)
+	$SpeechBox/RichTextLabel4.visible = false
+	$SpeechBox/RichTextLabel5.visible = true
+	tutorial_5.play("tutorial5")
+	await get_tree().create_timer(5).timeout
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func anim_3():
 	checking_card_count = false
+	$SpeechBox/TutorialArrow.visible = false
 	card_slot.process_mode = Node.PROCESS_MODE_INHERIT
 	$SpeechBox/RichTextLabel2.visible = false
 	$SpeechBox/RichTextLabel3.visible = true

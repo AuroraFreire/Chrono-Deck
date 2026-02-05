@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bnluf0hdvqf3e"]
+[gd_scene load_steps=51 format=3 uid="uid://bnluf0hdvqf3e"]
 
 [ext_resource type="Script" uid="uid://bh6r57qph2vnr" path="res://scripts/Tutorial/mainTutorial.gd" id="1_ej4tf"]
 [ext_resource type="Texture2D" uid="uid://en21l55q56c" path="res://assets/images2/tutorialBg.png" id="2_ej4tf"]
@@ -395,6 +395,47 @@ _data = {
 &"tutorial4": SubResource("Animation_dwom6")
 }
 
+[sub_resource type="Animation" id="Animation_15kfc"]
+resource_name = "tutorialçl5"
+
+[sub_resource type="Animation" id="Animation_7a100"]
+resource_name = "tutorial5"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpeechBox/RichTextLabel5:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1, 70]
+}
+
+[sub_resource type="Animation" id="Animation_feaue"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpeechBox/RichTextLabel5:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_210s6"]
+_data = {
+&"RESET": SubResource("Animation_feaue"),
+&"tutorial5": SubResource("Animation_7a100"),
+&"tutorialçl5": SubResource("Animation_15kfc")
+}
+
 [node name="Tutorial" type="Control"]
 layout_mode = 3
 anchors_preset = 8
@@ -413,9 +454,8 @@ script = ExtResource("1_ej4tf")
 [node name="SpeechBox" type="Panel" parent="."]
 z_index = -1
 layout_mode = 0
-offset_left = -780.0
 offset_top = 180.0
-offset_right = 13.0
+offset_right = 793.0
 offset_bottom = 529.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_wr8iv")
 
@@ -528,8 +568,22 @@ offset_bottom = 138.186
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 40
 text = "Perfect! Now, click  the \"end turn\" button."
-visible_characters = 65
-visible_ratio = 1.5116279
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="SpeechBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.133
+anchor_top = 0.286
+anchor_right = 0.133
+anchor_bottom = 0.286
+offset_left = -84.469
+offset_top = -79.814
+offset_right = 384.531
+offset_bottom = 138.186
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "Oh no, what's happening!? We're losing time, we gotta leave right now!"
 metadata/_edit_use_anchors_ = true
 
 [node name="TutorialArrow" type="Sprite2D" parent="SpeechBox"]
@@ -739,6 +793,11 @@ libraries = {
 [node name="Tutorial4" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_bl2xa")
+}
+
+[node name="Tutorial5" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_210s6")
 }
 
 [connection signal="pressed" from="SpeechBox/nextButton" to="." method="_on_next_button_pressed"]
