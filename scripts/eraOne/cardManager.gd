@@ -36,35 +36,9 @@ func finish_drag():
 		player_hand_reference.add_card_to_hand(card_being_dragged)
 	card_being_dragged = null
 
-func connect_card_signals(card):
-	card.connect("hovered", on_hovered_over_card)
-	card.connect("hovered_off", on_hovered_off_card)
-
 func on_left_click_released():
 	if card_being_dragged:
 		finish_drag()
-
-func on_hovered_over_card(card):
-	if !is_hovering_on_card:
-		is_hovering_on_card = true
-	highlight_card(card, true)
-
-func on_hovered_off_card(card):
-	if !card_being_dragged:
-		highlight_card(card, false)
-		var new_card_hovered = raycast_check_card()
-		if new_card_hovered:
-			highlight_card(new_card_hovered, true)
-		else:
-			is_hovering_on_card = false
-
-func highlight_card(card, hovered):
-	if hovered:
-		card.scale = Vector2(1.05, 1.05)
-		card.z_index = 2
-	else:
-		card.scale = Vector2(1, 1)
-		card.z_index = 1
 
 func raycast_check_card_slot():
 	var space_state = get_world_2d().direct_space_state

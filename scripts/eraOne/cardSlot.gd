@@ -38,10 +38,10 @@ func take_damage():
 			healthbar.health -= 9
 			texture_progress_bar.reduce_time(4)
 			delete_card()
-		elif current_card_image_path == "res://assets/card_images/SandShield.png":
+		elif current_card_image_path == "res://assets/card_images1/SandShield.png":
 			card_effect = "SandShield"
 			delete_card()
-		elif current_card_image_path == "res://assets/card_images/SolarStasis.png":
+		elif current_card_image_path == "res://assets/card_images1/SolarStasis.png":
 			card_effect = "SolarStasis"
 			delete_card()
 
@@ -61,6 +61,7 @@ func _on_end_turn_pressed() -> void:
 		card_effect = ""
 	if card_effect == "SolarStasis":
 		chronarc_attack = 0
+		card_effect = ""
 	texture_progress_bar.reduce_time(chronarc_attack)
 	await get_tree().create_timer(0.67, false).timeout
 	card_slot.process_mode = Node.PROCESS_MODE_INHERIT

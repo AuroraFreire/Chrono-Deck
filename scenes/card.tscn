@@ -11,16 +11,16 @@ z_index = 1
 position = Vector2(150, 890)
 script = ExtResource("1_6u4wf")
 
-[node name="cardImg" type="Sprite2D" parent="."]
-position = Vector2(-3, -2)
-scale = Vector2(0.53, 0.53)
-texture = ExtResource("2_6u4wf")
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-3, -2)
 shape = SubResource("RectangleShape2D_rjlel")
 
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[node name="cardImg" type="Sprite2D" parent="."]
+position = Vector2(-3, -2)
+scale = Vector2(0.53, 0.53)
+texture = ExtResource("2_6u4wf")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]

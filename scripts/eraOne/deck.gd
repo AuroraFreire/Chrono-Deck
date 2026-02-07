@@ -28,7 +28,6 @@ func draw_card():
 	if ResourceLoader.exists(image_path):
 		new_card.get_node("cardImg").texture = load(image_path)
 	card_manager.add_child(new_card)
-	card_manager.connect_card_signals(new_card)
 	hand.add_card_to_hand(new_card)
 	return new_card
 

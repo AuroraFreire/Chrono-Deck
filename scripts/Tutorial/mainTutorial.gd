@@ -45,6 +45,7 @@ func _on_back_pressed() -> void:
 	options.visible = false
 
 func _on_main_menu_pressed() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func _on_next_button_pressed() -> void:
@@ -62,7 +63,7 @@ func _on_end_turn_pressed() -> void:
 	$SpeechBox/RichTextLabel4.visible = false
 	$SpeechBox/RichTextLabel5.visible = true
 	tutorial_5.play("tutorial5")
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(6).timeout
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func anim_3():
