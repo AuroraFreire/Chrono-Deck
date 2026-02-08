@@ -12,6 +12,7 @@ position = Vector2(150, 890)
 script = ExtResource("1_6u4wf")
 
 [node name="Area2D" type="Area2D" parent="."]
+z_index = 4096
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-3, -2)
@@ -22,5 +23,12 @@ position = Vector2(-3, -2)
 scale = Vector2(0.53, 0.53)
 texture = ExtResource("2_6u4wf")
 
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -109.0
+offset_top = -148.0
+offset_right = 105.0
+offset_bottom = 146.0
+
+[connection signal="mouse_entered" from="Panel" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel" to="." method="_on_mouse_exited"]

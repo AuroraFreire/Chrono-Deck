@@ -1,6 +1,6 @@
 extends Control
 
-func ItemPopup(Card, item):
+func ItemPopup(card, item):
 	%ItemPopup.popup()
 
 func HideItemPopup():
