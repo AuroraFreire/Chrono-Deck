@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://rmemyvlma3qv"]
+
+[ext_resource type="Script" uid="uid://ct42snxc4aikw" path="res://scripts/item.gd" id="1_k03e1"]
+
+[resource]
+script = ExtResource("1_k03e1")
+information = "This card will give 15 damage to the enemy and will cost 6 seconds"
+metadata/_custom_type_script = "uid://ct42snxc4aikw"

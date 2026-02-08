@@ -31,7 +31,6 @@ func take_damage():
 			texture_progress_bar.reduce_time(6)
 			delete_card()
 		elif current_card_image_path == "res://assets/card_images1/PraySun.png":
-			healthbar.health -= 0
 			texture_progress_bar.add_time(5)
 			delete_card()
 		elif current_card_image_path == "res://assets/card_images1/SolarBlade.png":

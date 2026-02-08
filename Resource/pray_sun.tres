@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://0eiie3pnkj0g"]
+
+[ext_resource type="Script" uid="uid://ct42snxc4aikw" path="res://scripts/item.gd" id="1_64kae"]
+
+[resource]
+script = ExtResource("1_64kae")
+information = "This card will give you 5 seconds for free!"
+metadata/_custom_type_script = "uid://ct42snxc4aikw"
