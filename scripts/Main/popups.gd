@@ -16,4 +16,4 @@ func HideItemPopup():
 	%ItemPopup.hide()
 
 func set_value(item: Item):
-	%Label2.text = item.information
+	%Information.text = item.info

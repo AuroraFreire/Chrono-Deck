@@ -10,14 +10,14 @@ var card_effect = ""
 var card_count = 0
 
 @onready var healthbar = $Healthbar
-@onready var texture_progress_bar = $"../CanvasLayer/TextureProgressBar"
+@onready var texture_progress_bar = $"../CanvasLayer/TextureProgressBar2"
 @onready var card_slot = $"."
-@onready var input_manager = $"../inputManager"
+@onready var input_manager = $"../inputManager2"
 
 func _ready() -> void:
 	texture_progress_bar.process_mode = Node.PROCESS_MODE_DISABLED
-	healthbar.init_health(75)
-	deck_reference = $"../Deck"
+	healthbar.init_health(80)
+	deck_reference = $"../Deck2"
 
 func place_card(card):
 	texture_progress_bar.process_mode = Node.PROCESS_MODE_INHERIT
