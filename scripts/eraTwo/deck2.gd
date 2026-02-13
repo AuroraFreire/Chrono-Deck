@@ -1,18 +1,18 @@
 extends Node2D
 
 const CARD_SCENE = preload("res://scenes/card.tscn")
-const CARD_IMAGES_PATH = "res://assets/card_images1/"
+const CARD_IMAGES_PATH = "res://assets/card_images_2/"
 
 @onready var card_manager = $"../cardManager2"
 @onready var hand = $"../Hand2"
 
 var image_path = ""
 var card_weights = {
-	"SolarBlade": 30,
-	"SandShield": 26,
-	"PharaoStrike": 26,
-	"PraySun": 23,
-	"SolarStasis": 20
+	"PlasmaPulse": 25,
+	"StasisField": 26,
+	"TemporalRift": 26,
+	"HackClock": 23,
+	"DigitalEcho": 19
 }
 
 func _ready() -> void:

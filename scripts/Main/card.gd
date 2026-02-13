@@ -16,12 +16,10 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_mouse_entered() -> void:
-	print("pila")
 	if item == null:
 		return
 	var size = $Area2D/CollisionShape2D.shape.get_rect().size
 	Popups.ItemPopup(Rect2(Vector2(global_position), Vector2(size)), item)
 
 func _on_mouse_exited() -> void:
-	print("dentro")
 	Popups.HideItemPopup()
