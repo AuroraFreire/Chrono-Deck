@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://1f6b24pjwa4d" path="res://assets/images2/Under.png" id="10_15kfc"]
 [ext_resource type="Script" uid="uid://cs5g3frthhelx" path="res://scripts/Tutorial/input_managerTutorial.gd" id="11_0hilk"]
 [ext_resource type="Texture2D" uid="uid://d4i2dkqek2qv3" path="res://assets/images2/Progress.png" id="11_7a100"]
-[ext_resource type="Script" uid="uid://bgyhse4hp6qvj" path="res://scripts/eraOne/texture_progress_bar.gd" id="12_feaue"]
+[ext_resource type="Script" uid="uid://bgyhse4hp6qvj" path="res://scripts/Main/texture_progress_bar.gd" id="12_feaue"]
 [ext_resource type="Texture2D" uid="uid://b6ta14d54arhe" path="res://assets/images2/TutorialLady.png" id="14_0hilk"]
 [ext_resource type="AudioStream" uid="uid://dsqkweaslm0hx" path="res://assets/music/StockTune-Whispers Of The Forest_1770317669.wav" id="15_e13mp"]
 [ext_resource type="Texture2D" uid="uid://c5mecb0lsb5j6" path="res://assets/images2/TutorialArrow.png" id="15_wr8iv"]

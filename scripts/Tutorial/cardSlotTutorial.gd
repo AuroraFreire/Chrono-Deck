@@ -34,7 +34,6 @@ func delete_card():
 		current_card = null
 	card_in_slot = false
 
-
 func _on_end_turn_pressed() -> void:
 	deck.process_mode = Node.PROCESS_MODE_INHERIT
 	await get_tree().create_timer(0.67, false).timeout

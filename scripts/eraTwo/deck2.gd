@@ -1,6 +1,6 @@
 extends Node2D
 
-const CARD_SCENE = preload("res://scenes/card.tscn")
+const CARD_SCENE = preload("res://scenes/card2.tscn")
 const CARD_IMAGES_PATH = "res://assets/card_images_2/"
 
 @onready var card_manager = $"../cardManager2"
@@ -26,7 +26,7 @@ func draw_card():
 	new_card.name = card_name
 	image_path = CARD_IMAGES_PATH + card_name + ".png"
 	if ResourceLoader.exists(image_path):
-		new_card.get_node("cardImg").texture = load(image_path)
+		new_card.get_node("CardImg2").texture = load(image_path)
 	card_manager.add_child(new_card)
 	hand.add_card_to_hand(new_card)
 	return new_card

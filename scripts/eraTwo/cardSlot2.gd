@@ -17,44 +17,57 @@ var current_effect = ""
 
 func _ready() -> void:
 	texture_progress_bar.process_mode = Node.PROCESS_MODE_DISABLED
+	$"../Countdown".process_mode = Node.PROCESS_MODE_DISABLED
 	healthbar.init_health(80)
 	deck_reference = $"../Deck2"
 
-func place_card(card):
+func place_card(card2):
 	texture_progress_bar.process_mode = Node.PROCESS_MODE_INHERIT
-	current_card = card
+	$"../Countdown".process_mode = Node.PROCESS_MODE_INHERIT  
+	current_card = card2
 	card_in_slot = true
 	card_count += 1
 	if card_count >= 2:
 		input_manager.process_mode = Node.PROCESS_MODE_DISABLED
-	var card_texture = card.get_node("cardImg").texture
+	var card_texture = card2.get_node("CardImg2").texture
 	if card_texture:
 		current_card_image_path = card_texture.resource_path
 
 func take_damage():
 	if card_in_slot:
 		deck_reference.process_mode = Node.PROCESS_MODE_DISABLED
-		if current_card_image_path == "res://assets/card_images2/DigitalEcho.png":
-			healthbar.health -= 15
-			texture_progress_bar.reduce_time(0)
+		if current_card_image_path == "res://assets/card_images_2/DigitalEcho.png":
+			match current_effect:
+				"HackClock":
+					texture_progress_bar.add_time(3)
+				"TemporalRift":
+					healthbar.health -= 15
+					texture_progress_bar.reduce_time(7)
+				"PlasmaPulse":
+					healthbar.health -= 9
+					texture_progress_bar.reduce_time(5)
+					card_effect = "PlasmaPulse"
+				"StasisField":
+					texture_progress_bar.reduce_time(1)
+					card_effect = "StasisField"
 			current_effect = ""
 			delete_card()
-		elif current_card_image_path == "res://assets/card_images2/HackClock.png":
+		elif current_card_image_path == "res://assets/card_images_2/HackClock.png":
 			texture_progress_bar.add_time(3)
 			current_effect = "HackClock"
 			delete_card()
-		elif current_card_image_path == "res://assets/card_images2/PlasmPulse.png":
+		elif current_card_image_path == "res://assets/card_images_2/PlasmaPulse.png":
 			healthbar.health -= 9
 			texture_progress_bar.reduce_time(5)
 			card_effect = "PlasmaPulse"
 			current_effect = "PlasmaPulse"
 			delete_card()
-		elif current_card_image_path == "res://assets/card_images2/StasisField.png":
+		elif current_card_image_path == "res://assets/card_images_2/StasisField.png":
 			texture_progress_bar.reduce_time(1)
 			card_effect = "StasisField"
 			current_effect = "StasisField"
 			delete_card()
-		elif current_card_image_path == "res://assets/card_images2/TemporalRift.png":
+		elif current_card_image_path == "res://assets/card_images_2/TemporalRift.png":
 			healthbar.health -= 15
 			texture_progress_bar.reduce_time(7)
 			current_effect = "TemporalRift"

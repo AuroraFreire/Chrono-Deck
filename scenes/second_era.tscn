@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://nik8p7fsx5ww" path="res://scripts/eraTwo/main2.gd" id="1_fnljc"]
 [ext_resource type="Texture2D" uid="uid://bkbesmk476tvt" path="res://assets/images2/EraTwoBG.png" id="2_fnljc"]
-[ext_resource type="PackedScene" uid="uid://b7com6bidfl48" path="res://scenes/CardSlot.tscn" id="3_0omdw"]
+[ext_resource type="PackedScene" uid="uid://c3nl6i83y01e5" path="res://scenes/CardSlot2.tscn" id="3_fnljc"]
 [ext_resource type="Script" uid="uid://cqyim1i50ntns" path="res://scripts/eraTwo/cardSlot2.gd" id="4_3u1o5"]
 [ext_resource type="Script" uid="uid://c5inmly81i1r1" path="res://scripts/eraTwo/cardManager2.gd" id="5_0omdw"]
 [ext_resource type="Script" uid="uid://dlytida4fkprm" path="res://scripts/eraTwo/playerHand2.gd" id="6_chawc"]
@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://esdhdyagti0i" path="res://scripts/eraTwo/input_manager2.gd" id="9_plvml"]
 [ext_resource type="Texture2D" uid="uid://1f6b24pjwa4d" path="res://assets/images2/Under.png" id="10_kmw2c"]
 [ext_resource type="Texture2D" uid="uid://d4i2dkqek2qv3" path="res://assets/images2/Progress.png" id="11_vqhe8"]
-[ext_resource type="Script" uid="uid://bqdridw18whxa" path="res://scripts/eraTwo/texture_progress_bar2.gd" id="12_3u1o5"]
+[ext_resource type="Script" uid="uid://bgyhse4hp6qvj" path="res://scripts/Main/texture_progress_bar.gd" id="12_fnljc"]
 [ext_resource type="AudioStream" uid="uid://b72tfbhsm7bdi" path="res://assets/music/hidden_temple.wav" id="13_llcoa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6xl0"]
@@ -90,7 +90,7 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0)
+bg_color = Color(1, 1, 1, 0)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
@@ -98,7 +98,7 @@ corner_radius_bottom_left = 3
 corner_detail = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqmmt"]
-bg_color = Color(0.24454394, 0.1366652, 0.02952511, 0.6745098)
+bg_color = Color(0.16528329, 0.16444248, 0.41939205, 0.6745098)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -111,7 +111,7 @@ corner_radius_bottom_left = 25
 shadow_offset = Vector2(0, 3.67)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yc10j"]
-bg_color = Color(0.18431373, 0.09803922, 0.015686275, 0.83137256)
+bg_color = Color(0.10076017, 0.10047754, 0.28261688, 0.6745098)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -124,7 +124,7 @@ corner_radius_bottom_left = 25
 shadow_offset = Vector2(0, 3.67)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jscy8"]
-bg_color = Color(0.25882354, 0.14509805, 0.03137255, 0.8)
+bg_color = Color(0.12822756, 0.12800163, 0.34172532, 0.6745098)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -161,8 +161,8 @@ offset_bottom = 1080.0
 texture = ExtResource("2_fnljc")
 expand_mode = 3
 
-[node name="cardSlot2" parent="." instance=ExtResource("3_0omdw")]
-position = Vector2(134, 52)
+[node name="cardSlot2" parent="." instance=ExtResource("3_fnljc")]
+position = Vector2(108, 131)
 script = ExtResource("4_3u1o5")
 
 [node name="cardManager2" type="Node2D" parent="."]
@@ -210,7 +210,7 @@ max_value = 60.0
 value = 60.0
 texture_under = ExtResource("10_kmw2c")
 texture_progress = ExtResource("11_vqhe8")
-script = ExtResource("12_3u1o5")
+script = ExtResource("12_fnljc")
 total_time = 60.0
 
 [node name="Countdown" type="Node" parent="."]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3nl6i83y01e5"]
+
+[ext_resource type="Texture2D" uid="uid://dgo04ffajofqc" path="res://assets/images2/Nova9.png" id="1_y4slt"]
+[ext_resource type="PackedScene" uid="uid://driuwh2dmpks0" path="res://scenes/heatlhbar.tscn" id="2_mfpxl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_or4gj"]
+size = Vector2(618.88904, 498.88898)
+
+[node name="cardSlot2" type="Node2D"]
+
+[node name="CardSlotImage2" type="Sprite2D" parent="."]
+position = Vector2(1468, 648)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_y4slt")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1544, 639)
+scale = Vector2(0.9, 0.9)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3.889038, 8.333313)
+shape = SubResource("RectangleShape2D_or4gj")
+
+[node name="Healthbar" parent="." instance=ExtResource("2_mfpxl")]
+offset_left = 1458.0
+offset_top = 396.0
+offset_right = 1663.0
+offset_bottom = 414.0

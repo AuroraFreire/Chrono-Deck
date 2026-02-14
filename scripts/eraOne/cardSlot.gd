@@ -16,11 +16,13 @@ var card_count = 0
 
 func _ready() -> void:
 	texture_progress_bar.process_mode = Node.PROCESS_MODE_DISABLED
+	$"../Countdown".process_mode = Node.PROCESS_MODE_DISABLED
 	healthbar.init_health(75)
 	deck_reference = $"../Deck"
 
 func place_card(card):
 	texture_progress_bar.process_mode = Node.PROCESS_MODE_INHERIT
+	$"../Countdown".process_mode = Node.PROCESS_MODE_INHERIT
 	current_card = card
 	card_in_slot = true
 	card_count += 1
@@ -34,7 +36,7 @@ func take_damage():
 	if card_in_slot:
 		deck_reference.process_mode = Node.PROCESS_MODE_DISABLED
 		if current_card_image_path == "res://assets/card_images1/PharaoStrike.png":
-			healthbar.health -= 15
+			healthbar.health -= 20000
 			texture_progress_bar.reduce_time(6)
 			delete_card()
 		elif current_card_image_path == "res://assets/card_images1/PraySun.png":
@@ -50,6 +52,10 @@ func take_damage():
 		elif current_card_image_path == "res://assets/card_images1/SolarStasis.png":
 			card_effect = "SolarStasis"
 			delete_card()
+		if healthbar.health <= 0:
+			await get_tree().create_timer(0.5, false).timeout
+			get_tree().call_deferred("change_scene_to_file", "res://scenes/second_monologue.tscn")
+			return
 
 func delete_card():
 	if current_card:

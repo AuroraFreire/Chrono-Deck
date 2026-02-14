@@ -9,6 +9,7 @@ extends Control
 @onready var deck = $DeckTutorial
 @onready var card_slot = $cardSlotTutorial
 @onready var texture_progress_bar = $CanvasLayer/TextureProgressBar
+@onready var timer = $Countdown
 @onready var input_manager = $inputManager
 @onready var next_button = $SpeechBox/nextButton
 
@@ -26,6 +27,7 @@ func _ready() -> void:
 	deck.process_mode = Node.PROCESS_MODE_DISABLED
 	card_slot.process_mode = Node.PROCESS_MODE_DISABLED
 	texture_progress_bar.process_mode = Node.PROCESS_MODE_DISABLED
+	timer.process_mode = Node.PROCESS_MODE_DISABLED
 	tutorial_1.play("tutorial1")
 
 func _process(_delta: float) -> void:
@@ -60,6 +62,7 @@ func _on_next_button_pressed() -> void:
 
 func _on_end_turn_pressed() -> void:
 	texture_progress_bar.process_mode = Node.PROCESS_MODE_INHERIT
+	timer.process_mode = Node.PROCESS_MODE_INHERIT
 	$SpeechBox/RichTextLabel4.visible = false
 	$SpeechBox/RichTextLabel5.visible = true
 	tutorial_5.play("tutorial5")
