@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://1f6b24pjwa4d" path="res://assets/images2/Under.png" id="10_kmw2c"]
 [ext_resource type="Texture2D" uid="uid://d4i2dkqek2qv3" path="res://assets/images2/Progress.png" id="11_vqhe8"]
 [ext_resource type="Script" uid="uid://bgyhse4hp6qvj" path="res://scripts/Main/texture_progress_bar.gd" id="12_fnljc"]
-[ext_resource type="AudioStream" uid="uid://b72tfbhsm7bdi" path="res://assets/music/hidden_temple.wav" id="13_llcoa"]
+[ext_resource type="AudioStream" uid="uid://kchdny2euabf" path="res://assets/music/StockTune-Echoes From Tomorrow_1771110583.wav" id="13_fnljc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6xl0"]
 size = Vector2(330, 455)
@@ -303,7 +303,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_0ld40")
 text = "Main Menu"
 
 [node name="AmbientSong" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_llcoa")
+stream = ExtResource("13_fnljc")
 volume_db = -6.7
 autoplay = true
 bus = &"Music"

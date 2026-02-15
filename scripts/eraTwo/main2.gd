@@ -21,7 +21,3 @@ func _on_back_pressed() -> void:
 func _on_main_menu_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
-
-
-func _on_end_turn_pressed() -> void:
-	pass # Replace with function body.

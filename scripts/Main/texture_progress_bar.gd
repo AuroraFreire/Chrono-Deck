@@ -34,4 +34,5 @@ func _process(delta: float):
 	value = time_left
 	$"../../Countdown/countdownLabel".text = "%02d:%02d" % time_left_to_zero()
 	if value <= 0:
+		await get_tree().create_timer(0.6).timeout
 		get_tree().change_scene_to_file("res://scenes/endgame_animation.tscn")

@@ -36,7 +36,7 @@ func take_damage():
 	if card_in_slot:
 		deck_reference.process_mode = Node.PROCESS_MODE_DISABLED
 		if current_card_image_path == "res://assets/card_images1/PharaoStrike.png":
-			healthbar.health -= 20000
+			healthbar.health -= 15
 			texture_progress_bar.reduce_time(6)
 			delete_card()
 		elif current_card_image_path == "res://assets/card_images1/PraySun.png":
