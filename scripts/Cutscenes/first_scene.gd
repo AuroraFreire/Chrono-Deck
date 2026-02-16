@@ -19,7 +19,7 @@ var text_segments = [
 	{"text": "Not because it's rare.. but because it hurts to spend.", "pause_after": 1.0},
 	{"text": "I can't stop that,", "pause_after": 1.0},
 	{"text": "I can only point the way.", "pause_after": 1.5},
-	{"text": "Use what we have left.", "pause_after": 1.0},
+	{"text": "Use what We have left.", "pause_after": 1.0},
 	{"text": " ", "pause_after": 0.4}
 ]
 

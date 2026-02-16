@@ -16,7 +16,7 @@ var text_segments = [
 	{"text": "Time doesn't want temples anymore,", "pause_after": 0.5},
 	{"text": "It wants speed.", "pause_after": 1.0},
 	{"text": "Follow me.", "pause_after": 1.3},
-	{"text": ".", "pause_after": 0.4}
+	{"text": "", "pause_after": 0.4}
 ]
 
 func _ready() -> void:
