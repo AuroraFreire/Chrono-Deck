@@ -12,6 +12,7 @@ extends Control
 @onready var timer = $Countdown
 @onready var input_manager = $inputManager
 @onready var next_button = $SpeechBox/nextButton
+@onready var end_turn = $endTurn
 
 var checking_card_count = false
 var checking_card_in_slot = false
@@ -25,6 +26,7 @@ func _ready() -> void:
 	$SpeechBox/RichTextLabel5.visible = false
 	options.process_mode = Node.PROCESS_MODE_ALWAYS
 	deck.process_mode = Node.PROCESS_MODE_DISABLED
+	end_turn.process_mode = Node.PROCESS_MODE_DISABLED
 	card_slot.process_mode = Node.PROCESS_MODE_DISABLED
 	texture_progress_bar.process_mode = Node.PROCESS_MODE_DISABLED
 	timer.process_mode = Node.PROCESS_MODE_DISABLED
@@ -83,3 +85,4 @@ func anim_4():
 	$SpeechBox/RichTextLabel3.visible = false
 	$SpeechBox/RichTextLabel4.visible = true
 	tutorial_4.play("tutorial4")
+	end_turn.process_mode = Node.PROCESS_MODE_INHERIT

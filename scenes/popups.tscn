@@ -1,48 +1,53 @@
-[gd_scene load_steps=3 format=3 uid="uid://ib1o0qmyuh6w"]
+[gd_scene load_steps=2 format=3 uid="uid://ib1o0qmyuh6w"]
 
 [ext_resource type="Script" uid="uid://dl31eio0qnuff" path="res://scripts/Main/popups.gd" id="1_w2jk7"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk52g"]
-bg_color = Color(0.10190635, 0.07269501, 0.009755568, 1)
-
 [node name="Popups" type="Control"]
+visible = false
 layout_mode = 3
 anchor_left = 0.224
 anchor_top = 0.069000006
 anchor_right = 0.224
 anchor_bottom = 0.069000006
-offset_left = 49.919983
-offset_top = 465.47998
-offset_right = 909.92
-offset_bottom = 615.48
+offset_left = 121.91998
+offset_top = 559.48
+offset_right = 981.92
+offset_bottom = 709.48
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w2jk7")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="ItemPopup" type="PopupPanel" parent="UI"]
-unique_name_in_owner = true
-oversampling_override = 1.0
-position = Vector2i(480, 540)
-size = Vector2i(860, 150)
-visible = true
-theme_override_styles/panel = SubResource("StyleBoxFlat_fk52g")
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.042000003
+anchor_top = -0.74
+anchor_right = -0.042000003
+anchor_bottom = -0.74
+offset_left = 0.12000275
+offset_right = 866.12
+offset_bottom = 151.0
 
-[node name="Label" type="Label" parent="UI/ItemPopup"]
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 860.0
-offset_bottom = 150.0
+offset_left = -430.0
+offset_top = -75.0
+offset_right = 430.0
+offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 36
 text = " Hability"
 
-[node name="Information" type="Label" parent="UI/ItemPopup"]
+[node name="Information" type="Label" parent="Panel"]
 unique_name_in_owner = true
-offset_right = 860.0
+layout_mode = 0
+offset_right = 866.0
 offset_bottom = 150.0

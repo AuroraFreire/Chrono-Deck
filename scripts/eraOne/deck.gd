@@ -2,6 +2,7 @@ extends Node2D
 
 const CARD_SCENE = preload("res://scenes/card.tscn")
 const CARD_IMAGES_PATH = "res://assets/card_images1/"
+const ITEMS_PATH = "res://Resource/"
 
 @onready var card_manager = $"../cardManager"
 @onready var hand = $"../Hand"

@@ -5,21 +5,18 @@ extends Node2D
 		item = value
 		if value != null:
 			$cardImg.texture = get_node("cardImg").texture
-
-var starting_position
 var card_slot_reference
 
 func _ready() -> void:
-	card_slot_reference = $cardSlot
+	Popups.visible = false
 
 func _process(_delta: float) -> void:
 	pass
 
 func _on_mouse_entered() -> void:
-	if item == null:
-		return
-	var size = $Area2D/CollisionShape2D.shape.get_rect().size
-	Popups.ItemPopup(Rect2(Vector2(global_position), Vector2(size)), item)
+	if item != null:
+		Popups.set_value(item)
+	Popups.visible = true
 
 func _on_mouse_exited() -> void:
-	Popups.HideItemPopup()
+	Popups.visible = false
