@@ -6,6 +6,7 @@ extends Node2D
 		if value != null:
 			$cardImg.texture = get_node("cardImg").texture
 var card_slot_reference
+var starting_position
 
 func _ready() -> void:
 	Popups.visible = false

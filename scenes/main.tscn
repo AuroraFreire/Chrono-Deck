@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cy0kxo4qwjmkk"]
+[gd_scene load_steps=28 format=3 uid="uid://cy0kxo4qwjmkk"]
 
 [ext_resource type="Script" uid="uid://boprvk1roxmxj" path="res://scripts/eraOne/main.gd" id="1_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://dxa7milbds7ca" path="res://assets/images2/eraOneBg.png" id="1_sugp2"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://1f6b24pjwa4d" path="res://assets/images2/Under.png" id="10_trceg"]
 [ext_resource type="Texture2D" uid="uid://d4i2dkqek2qv3" path="res://assets/images2/Progress.png" id="12_jkv2x"]
 [ext_resource type="AudioStream" uid="uid://b72tfbhsm7bdi" path="res://assets/music/hidden_temple.wav" id="13_trceg"]
+[ext_resource type="PackedScene" uid="uid://ib1o0qmyuh6w" path="res://scenes/popups.tscn" id="14_a8y0u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6xl0"]
 size = Vector2(330, 455)
@@ -331,6 +332,9 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_0ld40")
 text = "End Turn"
+
+[node name="Popups" parent="." instance=ExtResource("14_a8y0u")]
+layout_mode = 1
 
 [connection signal="pressed" from="Options/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Options/MainMenu" to="." method="_on_main_menu_pressed"]

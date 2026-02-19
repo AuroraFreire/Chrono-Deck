@@ -8,6 +8,7 @@ const ITEMS_PATH = "res://Resource/"
 @onready var hand = $"../Hand"
 
 var image_path = ""
+var items_path = ""
 var card_weights = {
 	"SolarBlade": 30,
 	"SandShield": 26,
@@ -28,6 +29,15 @@ func draw_card():
 	image_path = CARD_IMAGES_PATH + card_name + ".png"
 	if ResourceLoader.exists(image_path):
 		new_card.get_node("cardImg").texture = load(image_path)
+	items_path = ITEMS_PATH + card_name + ".tres" 
+	var style = StyleBoxTexture.new()
+	style.texture = load(image_path)
+	new_card.get_node("Panel").add_theme_stylebox_override("panel", style)
+	if ResourceLoader.exists(items_path):
+		var item_data = load(items_path)
+		print(item_data.info)
+		print(item_data.info)
+		$"../Popups/Panel/Information".text = item_data.info
 	card_manager.add_child(new_card)
 	hand.add_card_to_hand(new_card)
 	return new_card
