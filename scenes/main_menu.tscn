@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://3lb71whrhhxt"]
+[gd_scene load_steps=17 format=3 uid="uid://3lb71whrhhxt"]
 
 [ext_resource type="Script" uid="uid://c57sn8fkvddxn" path="res://scripts/MainMenu/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://hlnj7itrdnjo" path="res://assets/images2/MainScreen.png" id="1_ekxnf"]
@@ -46,6 +46,15 @@ thickness = 6
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_8ln24"]
 color = Color(0.45882353, 0.72156864, 0.60784316, 1)
 thickness = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa1go"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbmy8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk1qb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -270,6 +279,18 @@ text = "SFX
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="dontclickthis" type="Button" parent="Options"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 412.25
+offset_right = 141.0
+offset_bottom = 440.25
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_oa1go")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tbmy8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jk1qb")
+text = "dont click here plss"
+
 [node name="menu_song" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_wu84c")
 autoplay = true
@@ -282,3 +303,4 @@ bus = &"Music"
 [connection signal="pressed" from="Options/Back" to="." method="_on_back_options_pressed"]
 [connection signal="value_changed" from="Options/AudioControl" to="Options/AudioControl" method="_on_value_changed"]
 [connection signal="value_changed" from="Options/SFXControl" to="Options/SFXControl" method="_on_value_changed"]
+[connection signal="pressed" from="Options/dontclickthis" to="." method="_on_dontclickthis_pressed"]

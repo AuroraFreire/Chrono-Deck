@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqa08mjv2wp5b"]
+
+[ext_resource type="Script" uid="uid://l73tk7twtios" path="res://scenes/troll.gd" id="1_ex8gv"]
+[ext_resource type="AudioStream" uid="uid://bf1t8lfe6hvpj" path="res://assets/music/forklift-certified.wav" id="2_he7uh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_he7uh"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="???" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ex8gv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -210.0
+offset_top = -214.0
+offset_right = 2718.0
+offset_bottom = 1481.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -663.0
+offset_top = -90.5
+offset_right = 663.0
+offset_bottom = 90.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 110
+text = "you just lost the game <3"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 1023.0
+offset_right = 355.0
+offset_bottom = 1067.0
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_he7uh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_he7uh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_he7uh")
+text = "go back to main menu"
+
+[node name="FORKLIFT CERTIFIED" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_he7uh")
+volume_db = -6.7
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
