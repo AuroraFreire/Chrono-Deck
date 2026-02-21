@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cnoo8j32r536b"]
 
-[ext_resource type="Script" uid="uid://dw1yb5sv3l8ww" path="res://scripts/Main/card.gd" id="1_8lbtd"]
+[ext_resource type="Script" uid="uid://bu77wyskt5bu7" path="res://scripts/eraTwo/card2.gd" id="1_8lbtd"]
 [ext_resource type="Texture2D" uid="uid://cui4el5erpyvu" path="res://assets/card_images_2/PlasmaPulse.png" id="2_8lbtd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjlel"]

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://c08meubtxcysg"]
+
+[ext_resource type="Script" uid="uid://ct42snxc4aikw" path="res://scripts/Main/item.gd" id="1_qioko"]
+
+[resource]
+script = ExtResource("1_qioko")
+info = "This card will copy the last played card's effect."
+metadata/_custom_type_script = "uid://ct42snxc4aikw"

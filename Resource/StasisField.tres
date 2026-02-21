@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://c6uhdh8db3ku3"]
+
+[ext_resource type="Script" uid="uid://ct42snxc4aikw" path="res://scripts/Main/item.gd" id="1_ncayo"]
+
+[resource]
+script = ExtResource("1_ncayo")
+info = "This card will block the enemy's next attack by 50% in exchange for 1 second."
+metadata/_custom_type_script = "uid://ct42snxc4aikw"

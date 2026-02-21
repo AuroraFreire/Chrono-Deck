@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://vx77l1i1m1hc"]
 
-[ext_resource type="Script" uid="uid://dw1yb5sv3l8ww" path="res://scripts/Main/card.gd" id="1_6u4wf"]
+[ext_resource type="Script" uid="uid://dw1yb5sv3l8ww" path="res://scripts/eraOne/card.gd" id="1_6u4wf"]
 [ext_resource type="Texture2D" uid="uid://ce568ty4kfocd" path="res://assets/card_images1/PharaoStrike.png" id="2_6u4wf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjlel"]

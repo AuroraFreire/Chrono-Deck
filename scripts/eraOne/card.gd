@@ -25,7 +25,7 @@ func _on_mouse_entered() -> void:
 	var texture = $cardImg.texture.resource_path
 	items_path = ITEMS_PATH + $".".name + ".tres" 
 	var item_data = load(items_path)
-	await get_tree().create_timer(0.05).timeout
+	await get_tree().create_timer(0.1).timeout
 	if texture == "res://assets/card_images1/PharaoStrike.png":
 		Popups.get_node("Panel/Information").text = item_data.info
 	elif texture == "res://assets/card_images1/PraySun.png":

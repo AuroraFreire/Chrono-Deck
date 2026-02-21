@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dd1oevw2o1b88"]
+[gd_scene load_steps=28 format=3 uid="uid://dd1oevw2o1b88"]
 
 [ext_resource type="Script" uid="uid://nik8p7fsx5ww" path="res://scripts/eraTwo/main2.gd" id="1_fnljc"]
 [ext_resource type="Texture2D" uid="uid://bkbesmk476tvt" path="res://assets/images2/EraTwoBG.png" id="2_fnljc"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://d4i2dkqek2qv3" path="res://assets/images2/Progress.png" id="11_vqhe8"]
 [ext_resource type="Script" uid="uid://bgyhse4hp6qvj" path="res://scripts/Main/texture_progress_bar.gd" id="12_fnljc"]
 [ext_resource type="AudioStream" uid="uid://kchdny2euabf" path="res://assets/music/StockTune-Echoes From Tomorrow_1771110583.wav" id="13_fnljc"]
+[ext_resource type="PackedScene" uid="uid://ib1o0qmyuh6w" path="res://scenes/popups.tscn" id="14_3u1o5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6xl0"]
 size = Vector2(330, 455)
@@ -331,6 +332,9 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_0ld40")
 text = "End Turn"
+
+[node name="Popups" parent="." instance=ExtResource("14_3u1o5")]
+layout_mode = 1
 
 [connection signal="pressed" from="Options/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Options/MainMenu" to="." method="_on_main_menu_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwo4b7mq5dprl"]
 
-[ext_resource type="Script" uid="uid://dw1yb5sv3l8ww" path="res://scripts/Main/card.gd" id="1_2tsak"]
+[ext_resource type="Script" uid="uid://dw1yb5sv3l8ww" path="res://scripts/eraOne/card.gd" id="1_2tsak"]
 [ext_resource type="Texture2D" uid="uid://cw8hg40wbd5ph" path="res://assets/card_tutorial/TutorialCard.png" id="2_2tsak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjlel"]

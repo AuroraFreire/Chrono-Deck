@@ -27,6 +27,9 @@ func draw_card():
 	image_path = CARD_IMAGES_PATH + card_name + ".png"
 	if ResourceLoader.exists(image_path):
 		new_card.get_node("CardImg2").texture = load(image_path)
+	var style = StyleBoxTexture.new()
+	style.texture = load(image_path)
+	new_card.get_node("Panel").add_theme_stylebox_override("panel", style)
 	card_manager.add_child(new_card)
 	hand.add_card_to_hand(new_card)
 	return new_card

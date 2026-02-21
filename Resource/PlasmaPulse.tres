@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://dmwje1ikh708i"]
+
+[ext_resource type="Script" uid="uid://ct42snxc4aikw" path="res://scripts/Main/item.gd" id="1_ix34s"]
+
+[resource]
+script = ExtResource("1_ix34s")
+info = "This card give 9 damage in excahnge for 5 seconds. This card will also block the enemy's next attack by 25%"
+metadata/_custom_type_script = "uid://ct42snxc4aikw"
