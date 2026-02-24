@@ -2,6 +2,8 @@ extends Control
 
 @onready var options: Panel = $Options
 
+var rng = RandomNumberGenerator.new
+
 func _ready() -> void:
 	options.visible = false
 	options.process_mode = Node.PROCESS_MODE_ALWAYS
