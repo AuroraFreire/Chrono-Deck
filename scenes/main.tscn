@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cy0kxo4qwjmkk"]
+[gd_scene format=3 uid="uid://cy0kxo4qwjmkk"]
 
 [ext_resource type="Script" uid="uid://boprvk1roxmxj" path="res://scripts/eraOne/main.gd" id="1_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://dxa7milbds7ca" path="res://assets/images2/eraOneBg.png" id="1_sugp2"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bgyhse4hp6qvj" path="res://scripts/Main/texture_progress_bar.gd" id="10_choun"]
 [ext_resource type="Texture2D" uid="uid://1f6b24pjwa4d" path="res://assets/images2/Under.png" id="10_trceg"]
 [ext_resource type="Texture2D" uid="uid://d4i2dkqek2qv3" path="res://assets/images2/Progress.png" id="12_jkv2x"]
+[ext_resource type="FontFile" uid="uid://clgwt0gpfvuta" path="res://Pixel Game.otf" id="13_jkv2x"]
 [ext_resource type="AudioStream" uid="uid://b72tfbhsm7bdi" path="res://assets/music/hidden_temple.wav" id="13_trceg"]
 [ext_resource type="PackedScene" uid="uid://ib1o0qmyuh6w" path="res://scenes/popups.tscn" id="14_a8y0u"]
 
@@ -137,7 +138,7 @@ corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 shadow_offset = Vector2(0, 3.67)
 
-[node name="eraOne" type="Control"]
+[node name="eraOne" type="Control" unique_id=415705728]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -152,7 +153,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_eb6dy")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=65064849]
 z_index = -2
 layout_mode = 0
 offset_left = -501.0
@@ -162,39 +163,39 @@ offset_bottom = 1080.0
 texture = ExtResource("1_sugp2")
 expand_mode = 3
 
-[node name="cardSlot" parent="." instance=ExtResource("3_tefeu")]
+[node name="cardSlot" parent="." unique_id=2531847 instance=ExtResource("3_tefeu")]
 position = Vector2(134, 52)
 script = ExtResource("4_a8y0u")
 
-[node name="cardManager" type="Node2D" parent="."]
+[node name="cardManager" type="Node2D" parent="." unique_id=976387707]
 script = ExtResource("2_jyhfs")
 
-[node name="Hand" type="Node2D" parent="."]
+[node name="Hand" type="Node2D" parent="." unique_id=890317292]
 script = ExtResource("3_tbgi4")
 
-[node name="Deck" type="Node2D" parent="."]
+[node name="Deck" type="Node2D" parent="." unique_id=712368703]
 z_index = -2
 position = Vector2(150, 890)
 scale = Vector2(0.65, 0.65)
 script = ExtResource("7_trceg")
 
-[node name="Sprite2D" type="Sprite2D" parent="Deck"]
+[node name="Sprite2D" type="Sprite2D" parent="Deck" unique_id=578564416]
 texture = ExtResource("7_o6xl0")
 
-[node name="Area2D" type="Area2D" parent="Deck"]
+[node name="Area2D" type="Area2D" parent="Deck" unique_id=131596262]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Deck/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deck/Area2D" unique_id=888416409]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_o6xl0")
 
-[node name="inputManager" type="Node2D" parent="."]
+[node name="inputManager" type="Node2D" parent="." unique_id=269727231]
 script = ExtResource("9_85g3d")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=952577909]
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=757830322]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.075
@@ -214,17 +215,18 @@ texture_progress = ExtResource("12_jkv2x")
 script = ExtResource("10_choun")
 total_time = 60.0
 
-[node name="Countdown" type="Node" parent="."]
+[node name="Countdown" type="Node" parent="." unique_id=2039476877]
 
-[node name="countdownLabel" type="Label" parent="Countdown"]
+[node name="countdownLabel" type="Label" parent="Countdown" unique_id=1532755114]
 modulate = Color(0.17492661, 0.14104345, 0.030845482, 1)
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("13_jkv2x")
 
-[node name="Timer" type="Timer" parent="Countdown"]
+[node name="Timer" type="Timer" parent="Countdown" unique_id=611747242]
 wait_time = 60.5
 
-[node name="Options" type="Panel" parent="."]
+[node name="Options" type="Panel" parent="." unique_id=1112787012]
 z_index = 5
 layout_mode = 1
 anchors_preset = 8
@@ -240,19 +242,20 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(404, 220.25)
 
-[node name="Label" type="Label" parent="Options"]
+[node name="Label" type="Label" parent="Options" unique_id=942632655]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 98.25
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("13_jkv2x")
 theme_override_font_sizes/font_size = 51
 text = "Pause
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Back" type="Button" parent="Options"]
+[node name="Back" type="Button" parent="Options" unique_id=995816755]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -270,6 +273,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_jkv2x")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_eb6dy")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_trceg")
@@ -279,7 +283,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_jkv2x")
 text = "X
 "
 
-[node name="MainMenu" type="Button" parent="Options"]
+[node name="MainMenu" type="Button" parent="Options" unique_id=1432413021]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -296,6 +300,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_jkv2x")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_jbj1t")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_muem4")
@@ -303,13 +308,13 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_dp3eg")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_0ld40")
 text = "Main Menu"
 
-[node name="AmbientSong" type="AudioStreamPlayer" parent="."]
+[node name="AmbientSong" type="AudioStreamPlayer" parent="." unique_id=1624870627]
 stream = ExtResource("13_trceg")
 volume_db = -6.7
 autoplay = true
 bus = &"Music"
 
-[node name="endTurn" type="Button" parent="."]
+[node name="endTurn" type="Button" parent="." unique_id=2106460680]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -326,6 +331,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_jkv2x")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_gqmmt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yc10j")
@@ -333,7 +339,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_0ld40")
 text = "End Turn"
 
-[node name="Popups" parent="." instance=ExtResource("14_a8y0u")]
+[node name="Popups" parent="." unique_id=859900145 instance=ExtResource("14_a8y0u")]
 layout_mode = 1
 
 [connection signal="pressed" from="Options/Back" to="." method="_on_back_pressed"]

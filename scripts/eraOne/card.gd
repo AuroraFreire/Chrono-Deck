@@ -22,7 +22,6 @@ var item_data = {
 func _ready() -> void:
 	Popups.visible = false
 
-
 func _on_mouse_entered() -> void:
 	if item != null:
 		Popups.set_value(item)
@@ -31,19 +30,14 @@ func _on_mouse_entered() -> void:
 	items_path = ITEMS_PATH + $".".name + ".tres" 
 	await get_tree().create_timer(0.1).timeout
 	if texture == "res://assets/card_images1/PharaoStrike.png":
-		print(item_data[name])
 		Popups.get_node("Panel/Information").text = item_data[name].info
 	elif texture == "res://assets/card_images1/PraySun.png":
-		print(item_data[name])
 		Popups.get_node("Panel/Information").text = item_data[name].info
 	elif texture == "res://assets/card_images1/SandShield.png":
-		print(item_data[name])
 		Popups.get_node("Panel/Information").text = item_data[name].info
 	elif texture == "res://assets/card_images1/SolarBlade.png":
-		print(item_data[name])
 		Popups.get_node("Panel/Information").text = item_data[name].info
 	elif texture == "res://assets/card_images1/SolarStasis.png":
-		print(item_data[name])
 		Popups.get_node("Panel/Information").text = item_data[name].info
 
 func _on_mouse_exited() -> void:

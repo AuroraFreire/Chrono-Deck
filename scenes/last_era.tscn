@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://glnlyabo5ueu"]
+[gd_scene format=3 uid="uid://glnlyabo5ueu"]
 
 [ext_resource type="Script" uid="uid://boprvk1roxmxj" path="res://scripts/eraOne/main.gd" id="1_pu45p"]
 [ext_resource type="Texture2D" uid="uid://brbhk8cs2qhu0" path="res://assets/images2/lastLevelBG.jpg" id="2_b1ink"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d4i2dkqek2qv3" path="res://assets/images2/Progress.png" id="6_dp3hi"]
 [ext_resource type="AudioStream" uid="uid://b72tfbhsm7bdi" path="res://assets/music/hidden_temple.wav" id="7_8xtbu"]
 [ext_resource type="PackedScene" uid="uid://ib1o0qmyuh6w" path="res://scenes/popups.tscn" id="8_4y1dl"]
+[ext_resource type="FontFile" uid="uid://clgwt0gpfvuta" path="res://Pixel Game.otf" id="10_6ab8b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6xl0"]
 size = Vector2(330, 455)
@@ -132,7 +133,7 @@ corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 shadow_offset = Vector2(0, 3.67)
 
-[node name="eraOne" type="Control"]
+[node name="eraOne" type="Control" unique_id=1434028877]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -147,7 +148,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pu45p")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2107531676]
 z_index = -2
 layout_mode = 0
 offset_left = -320.0
@@ -157,35 +158,35 @@ offset_bottom = 1092.0
 texture = ExtResource("2_b1ink")
 expand_mode = 3
 
-[node name="cardSlot3" parent="." instance=ExtResource("3_6ab8b")]
+[node name="cardSlot3" parent="." unique_id=233753694 instance=ExtResource("3_6ab8b")]
 position = Vector2(134, 52)
 script = ExtResource("4_b1ink")
 
-[node name="cardManager3" type="Node2D" parent="."]
+[node name="cardManager3" type="Node2D" parent="." unique_id=652122996]
 
-[node name="Hand3" type="Node2D" parent="."]
+[node name="Hand3" type="Node2D" parent="." unique_id=593219929]
 
-[node name="Deck3" type="Node2D" parent="."]
+[node name="Deck3" type="Node2D" parent="." unique_id=1737500370]
 z_index = -2
 position = Vector2(150, 890)
 scale = Vector2(0.65, 0.65)
 
-[node name="Sprite2D" type="Sprite2D" parent="Deck3"]
+[node name="Sprite2D" type="Sprite2D" parent="Deck3" unique_id=1715429647]
 texture = ExtResource("4_vrn11")
 
-[node name="Area2D" type="Area2D" parent="Deck3"]
+[node name="Area2D" type="Area2D" parent="Deck3" unique_id=654018388]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Deck3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deck3/Area2D" unique_id=1342852187]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_o6xl0")
 
-[node name="inputManager3" type="Node2D" parent="."]
+[node name="inputManager3" type="Node2D" parent="." unique_id=800800980]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=198388053]
 
-[node name="TextureProgressBar3" type="TextureProgressBar" parent="CanvasLayer"]
+[node name="TextureProgressBar3" type="TextureProgressBar" parent="CanvasLayer" unique_id=1478086300]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.075
@@ -203,17 +204,17 @@ value = 60.0
 texture_under = ExtResource("5_vi2oh")
 texture_progress = ExtResource("6_dp3hi")
 
-[node name="Countdown" type="Node" parent="."]
+[node name="Countdown" type="Node" parent="." unique_id=1426099541]
 
-[node name="countdownLabel" type="Label" parent="Countdown"]
+[node name="countdownLabel" type="Label" parent="Countdown" unique_id=1986124572]
 modulate = Color(0.17492661, 0.14104345, 0.030845482, 1)
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="Timer" type="Timer" parent="Countdown"]
+[node name="Timer" type="Timer" parent="Countdown" unique_id=386689783]
 wait_time = 60.5
 
-[node name="Options" type="Panel" parent="."]
+[node name="Options" type="Panel" parent="." unique_id=2012837404]
 z_index = 5
 layout_mode = 1
 anchors_preset = 8
@@ -229,7 +230,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(404, 220.25)
 
-[node name="Label" type="Label" parent="Options"]
+[node name="Label" type="Label" parent="Options" unique_id=731699300]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -241,7 +242,7 @@ text = "Pause
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Back" type="Button" parent="Options"]
+[node name="Back" type="Button" parent="Options" unique_id=48871535]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -268,7 +269,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_jkv2x")
 text = "X
 "
 
-[node name="MainMenu" type="Button" parent="Options"]
+[node name="MainMenu" type="Button" parent="Options" unique_id=654170361]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -292,13 +293,13 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_dp3eg")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_0ld40")
 text = "Main Menu"
 
-[node name="AmbientSong" type="AudioStreamPlayer" parent="."]
+[node name="AmbientSong" type="AudioStreamPlayer" parent="." unique_id=1202590639]
 stream = ExtResource("7_8xtbu")
 volume_db = -6.7
 autoplay = true
 bus = &"Music"
 
-[node name="endTurn" type="Button" parent="."]
+[node name="endTurn" type="Button" parent="." unique_id=604940065]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -322,18 +323,29 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_jscy8")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_0ld40")
 text = "End Turn"
 
-[node name="Popups" parent="." instance=ExtResource("8_4y1dl")]
+[node name="Popups" parent="." unique_id=501630386 instance=ExtResource("8_4y1dl")]
 layout_mode = 1
 
-[node name="EnemyAttack" type="Label" parent="."]
+[node name="EnemyAttack" type="Label" parent="." unique_id=1545572479]
 layout_mode = 0
 offset_left = 495.0
 offset_top = 233.0
 offset_right = 535.0
 offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("10_6ab8b")
+text = "4"
 
-[node name="Timer" type="Timer" parent="EnemyAttack"]
+[node name="Timer" type="Timer" parent="EnemyAttack" unique_id=1878817799]
 wait_time = 0.1
+
+[node name="TurnID" type="Label" parent="EnemyAttack" unique_id=259938384]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -19.0
+offset_right = 45.0
+offset_bottom = 4.0
+theme_override_fonts/font = ExtResource("10_6ab8b")
+text = "Your Turn"
 
 [connection signal="pressed" from="Options/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Options/MainMenu" to="." method="_on_main_menu_pressed"]

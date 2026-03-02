@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_ix34s")
-info = "This card give 9 damage in excahnge for 5 seconds. This card will also block the enemy's next attack by 25%"
+info = "This card give 9 damage in exchange for 5 seconds. This card will also block the enemy's next attack by 25%"
 metadata/_custom_type_script = "uid://ct42snxc4aikw"

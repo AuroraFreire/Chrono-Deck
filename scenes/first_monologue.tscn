@@ -1,49 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://v4pw34nyx7fn"]
+[gd_scene format=3 uid="uid://v4pw34nyx7fn"]
 
 [ext_resource type="Script" uid="uid://d3os5nvl37jf2" path="res://scripts/Cutscenes/first_scene.gd" id="1_q0ewu"]
 [ext_resource type="AudioStream" uid="uid://bnnl58ksf1dfv" path="res://assets/music/typewriter-typing-68696-_mp3cut.net___cut_0sec_.wav" id="2_51kf7"]
+[ext_resource type="FontFile" uid="uid://clgwt0gpfvuta" path="res://Pixel Game.otf" id="2_nkqa4"]
 [ext_resource type="Texture2D" uid="uid://bi1qx5hi6sd2g" path="res://assets/images2/spacebarIcon.png" id="3_wsrr2"]
 
-[node name="first_monologue" type="Control"]
+[node name="first_monologue" type="Control" unique_id=1939748163]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_q0ewu")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=703069219]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
-[node name="Text" type="RichTextLabel" parent="."]
+[node name="Text" type="RichTextLabel" parent="." unique_id=1522640669]
 layout_mode = 0
 offset_left = 3.0
 offset_top = -2.0
 offset_right = 1920.0
 offset_bottom = 1080.0
+theme_override_fonts/normal_font = ExtResource("2_nkqa4")
 theme_override_font_sizes/normal_font_size = 35
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Voice" type="AudioStreamPlayer" parent="."]
+[node name="Voice" type="AudioStreamPlayer" parent="." unique_id=1229402091]
 
-[node name="typewriter_sfx" type="AudioStreamPlayer" parent="."]
+[node name="typewriter_sfx" type="AudioStreamPlayer" parent="." unique_id=1839464721]
 stream = ExtResource("2_51kf7")
 volume_db = -15.0
 bus = &"SFX"
 
-[node name="Skip" type="RichTextLabel" parent="."]
+[node name="Skip" type="RichTextLabel" parent="." unique_id=1608242350]
 layout_mode = 0
 offset_left = 1514.0
 offset_top = 1023.0
 offset_right = 2070.0
 offset_bottom = 1127.0
+theme_override_fonts/normal_font = ExtResource("2_nkqa4")
 theme_override_font_sizes/normal_font_size = 23
 text = "Press |___|   to Skip (pls don't skip)"
 
-[node name="SpacebarIcon" type="Sprite2D" parent="."]
+[node name="SpacebarIcon" type="Sprite2D" parent="." unique_id=149628323]
 position = Vector2(1612.9999, 1043)
 scale = Vector2(0.10172192, 0.08003816)
 texture = ExtResource("3_wsrr2")

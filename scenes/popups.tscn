@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ib1o0qmyuh6w"]
+[gd_scene format=3 uid="uid://ib1o0qmyuh6w"]
 
 [ext_resource type="Script" uid="uid://dl31eio0qnuff" path="res://scripts/Main/popups.gd" id="1_w2jk7"]
 
@@ -10,7 +10,49 @@ border_width_right = 3
 border_width_bottom = 3
 border_color = Color(1, 1, 1, 1)
 
-[node name="Popups" type="Control"]
+[sub_resource type="FontFile" id="FontFile_fk52g"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_201id"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+
+[node name="Popups" type="Control" unique_id=1413795488]
 visible = false
 layout_mode = 3
 anchor_left = 0.224
@@ -25,9 +67,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w2jk7")
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1447174108]
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=633751198]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.042000003
@@ -39,7 +81,7 @@ offset_right = 866.12
 offset_bottom = 151.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_fk52g")
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Label" type="Label" parent="Panel" unique_id=1737225826]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -52,14 +94,16 @@ offset_right = 430.0
 offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = SubResource("FontFile_fk52g")
 theme_override_font_sizes/font_size = 36
 text = " Hability"
 
-[node name="Information" type="Label" parent="Panel"]
+[node name="Information" type="Label" parent="Panel" unique_id=1945990352]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 13.0
 offset_top = 51.0
 offset_right = 857.0
 offset_bottom = 144.0
+theme_override_fonts/font = SubResource("FontFile_201id")
 theme_override_font_sizes/font_size = 25
