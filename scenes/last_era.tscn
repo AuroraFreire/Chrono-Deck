@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://boprvk1roxmxj" path="res://scripts/eraOne/main.gd" id="1_pu45p"]
 [ext_resource type="Texture2D" uid="uid://brbhk8cs2qhu0" path="res://assets/images2/lastLevelBG.jpg" id="2_b1ink"]
 [ext_resource type="PackedScene" uid="uid://b7com6bidfl48" path="res://scenes/CardSlot.tscn" id="3_6ab8b"]
+[ext_resource type="Script" uid="uid://cgk8ha5125c7t" path="res://scripts/lastLevel/cardSlot3.gd" id="4_b1ink"]
 [ext_resource type="Texture2D" uid="uid://cwnqri6l7wwiy" path="res://assets/images2/_8EF5FA7C-6356-4BDA-AB74-23D32B1816DD_-removebg-preview.png" id="4_vrn11"]
 [ext_resource type="Texture2D" uid="uid://1f6b24pjwa4d" path="res://assets/images2/Under.png" id="5_vi2oh"]
 [ext_resource type="Texture2D" uid="uid://d4i2dkqek2qv3" path="res://assets/images2/Progress.png" id="6_dp3hi"]
 [ext_resource type="AudioStream" uid="uid://b72tfbhsm7bdi" path="res://assets/music/hidden_temple.wav" id="7_8xtbu"]
 [ext_resource type="PackedScene" uid="uid://ib1o0qmyuh6w" path="res://scenes/popups.tscn" id="8_4y1dl"]
-[ext_resource type="Script" uid="uid://fpvrqmhy8xg5" path="res://scenes/enemy_attack.gd" id="9_b1ink"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6xl0"]
 size = Vector2(330, 455)
@@ -150,15 +150,16 @@ script = ExtResource("1_pu45p")
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -2
 layout_mode = 0
-offset_left = -305.0
-offset_top = 22.0
-offset_right = 2172.0586
-offset_bottom = 1148.0
+offset_left = -320.0
+offset_top = -34.0
+offset_right = 2157.0586
+offset_bottom = 1092.0
 texture = ExtResource("2_b1ink")
 expand_mode = 3
 
 [node name="cardSlot3" parent="." instance=ExtResource("3_6ab8b")]
 position = Vector2(134, 52)
+script = ExtResource("4_b1ink")
 
 [node name="cardManager3" type="Node2D" parent="."]
 
@@ -326,9 +327,10 @@ layout_mode = 1
 
 [node name="EnemyAttack" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-script = ExtResource("9_b1ink")
+offset_left = 495.0
+offset_top = 233.0
+offset_right = 535.0
+offset_bottom = 256.0
 
 [node name="Timer" type="Timer" parent="EnemyAttack"]
 wait_time = 0.1
@@ -336,4 +338,4 @@ wait_time = 0.1
 [connection signal="pressed" from="Options/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Options/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="endTurn" to="cardSlot3" method="_on_end_turn_pressed"]
-[connection signal="timeout" from="EnemyAttack/Timer" to="EnemyAttack" method="_on_timer_timeout"]
+[connection signal="timeout" from="EnemyAttack/Timer" to="cardSlot3" method="_on_timer_timeout"]

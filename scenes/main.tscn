@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dh12oswoie4rs" path="res://scripts/eraOne/cardManager.gd" id="2_jyhfs"]
 [ext_resource type="Script" uid="uid://c44egv1jlxjyg" path="res://scripts/eraOne/playerHand.gd" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b7com6bidfl48" path="res://scenes/CardSlot.tscn" id="3_tefeu"]
-[ext_resource type="Script" uid="uid://cgk8ha5125c7t" path="res://scripts/lastLevel/cardSlot3.gd" id="4_o6xl0"]
+[ext_resource type="Script" uid="uid://c0tcr7fp8hbyf" path="res://scripts/eraOne/cardSlot.gd" id="4_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://cwnqri6l7wwiy" path="res://assets/images2/_8EF5FA7C-6356-4BDA-AB74-23D32B1816DD_-removebg-preview.png" id="7_o6xl0"]
 [ext_resource type="Script" uid="uid://ct3ly6w712422" path="res://scripts/eraOne/deck.gd" id="7_trceg"]
 [ext_resource type="Script" uid="uid://bw37wu5hoaijs" path="res://scripts/eraOne/input_manager.gd" id="9_85g3d"]
@@ -164,7 +164,7 @@ expand_mode = 3
 
 [node name="cardSlot" parent="." instance=ExtResource("3_tefeu")]
 position = Vector2(134, 52)
-script = ExtResource("4_o6xl0")
+script = ExtResource("4_a8y0u")
 
 [node name="cardManager" type="Node2D" parent="."]
 script = ExtResource("2_jyhfs")

@@ -8,7 +8,6 @@ var rng = RandomNumberGenerator.new()
 var chronarc_attack
 var card_effect = ""
 var card_count = 0
-var rng2
 
 @onready var healthbar = $Healthbar
 @onready var texture_progress_bar = $"../CanvasLayer/TextureProgressBar"
@@ -18,11 +17,8 @@ var rng2
 func _ready() -> void:
 	texture_progress_bar.process_mode = Node.PROCESS_MODE_DISABLED
 	$"../Countdown".process_mode = Node.PROCESS_MODE_DISABLED
-	healthbar.init_health(20)
+	healthbar.init_health(75)
 	deck_reference = $"../Deck"
-	$"../EnemyAttack/Timer".timeout.connect(_on_timer_timeout)
-	$"../endTurn".pressed.connect(_on_timer_timeout)
-	$"../EnemyAttack/Timer".start()
 
 func place_card(card):
 	texture_progress_bar.process_mode = Node.PROCESS_MODE_INHERIT
@@ -83,9 +79,3 @@ func _on_end_turn_pressed() -> void:
 	texture_progress_bar.reduce_time(chronarc_attack)
 	await get_tree().create_timer(0.67, false).timeout
 	card_slot.process_mode = Node.PROCESS_MODE_INHERIT
-
-
-func _on_timer_timeout() -> void:
-	rng2 = randi_range(0, 9)
-	var num_text = str(rng2)
-	$"../EnemyAttack".text = num_text

@@ -11,12 +11,17 @@ const ITEMS_PATH = "res://Resource/"
 var card_slot_reference
 var starting_position
 var items_path = ""
+var item_data = {
+"PharaoStrike": preload("res://Resource/PharaoStrike.tres"),
+"SandShield": preload("res://Resource/SandShield.tres"),
+"PraySun": preload("res://Resource/PraySun.tres"),
+"SolarBlade": preload("res://Resource/SolarBlade.tres"),
+"SolarStasis": preload("res://Resource/SolarStasis.tres")
+}
 
 func _ready() -> void:
 	Popups.visible = false
 
-func _process(_delta: float) -> void:
-	pass
 
 func _on_mouse_entered() -> void:
 	if item != null:
@@ -24,18 +29,22 @@ func _on_mouse_entered() -> void:
 	Popups.visible = true
 	var texture = $cardImg.texture.resource_path
 	items_path = ITEMS_PATH + $".".name + ".tres" 
-	var item_data = load(items_path)
 	await get_tree().create_timer(0.1).timeout
 	if texture == "res://assets/card_images1/PharaoStrike.png":
-		Popups.get_node("Panel/Information").text = item_data.info
+		print(item_data[name])
+		Popups.get_node("Panel/Information").text = item_data[name].info
 	elif texture == "res://assets/card_images1/PraySun.png":
-		Popups.get_node("Panel/Information").text = item_data.info
+		print(item_data[name])
+		Popups.get_node("Panel/Information").text = item_data[name].info
 	elif texture == "res://assets/card_images1/SandShield.png":
-		Popups.get_node("Panel/Information").text = item_data.info
+		print(item_data[name])
+		Popups.get_node("Panel/Information").text = item_data[name].info
 	elif texture == "res://assets/card_images1/SolarBlade.png":
-		Popups.get_node("Panel/Information").text = item_data.info
+		print(item_data[name])
+		Popups.get_node("Panel/Information").text = item_data[name].info
 	elif texture == "res://assets/card_images1/SolarStasis.png":
-		Popups.get_node("Panel/Information").text = item_data.info
+		print(item_data[name])
+		Popups.get_node("Panel/Information").text = item_data[name].info
 
 func _on_mouse_exited() -> void:
 	Popups.visible = false
