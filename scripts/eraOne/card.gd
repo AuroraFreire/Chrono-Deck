@@ -30,15 +30,15 @@ func _on_mouse_entered() -> void:
 	items_path = ITEMS_PATH + $".".name + ".tres" 
 	await get_tree().create_timer(0.1).timeout
 	if texture == "res://assets/card_images1/PharaoStrike.png":
-		Popups.get_node("Panel/Information").text = item_data[name].info
+		Popups.get_node("Panel/Information").text = item_data["PharaoStrike"].info
 	elif texture == "res://assets/card_images1/PraySun.png":
-		Popups.get_node("Panel/Information").text = item_data[name].info
+		Popups.get_node("Panel/Information").text = item_data["PraySun"].info
 	elif texture == "res://assets/card_images1/SandShield.png":
-		Popups.get_node("Panel/Information").text = item_data[name].info
+		Popups.get_node("Panel/Information").text = item_data["SandShield"].info
 	elif texture == "res://assets/card_images1/SolarBlade.png":
-		Popups.get_node("Panel/Information").text = item_data[name].info
+		Popups.get_node("Panel/Information").text = item_data["SolarBlade"].info
 	elif texture == "res://assets/card_images1/SolarStasis.png":
-		Popups.get_node("Panel/Information").text = item_data[name].info
+		Popups.get_node("Panel/Information").text = item_data["SolarStasis"].info
 
 func _on_mouse_exited() -> void:
 	Popups.visible = false
