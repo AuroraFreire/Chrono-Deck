@@ -32,15 +32,15 @@ func _on_mouse_entered() -> void:
 	var texture = $CardImg2.texture.resource_path
 	await get_tree().create_timer(0.1).timeout
 	if texture == "res://assets/card_images_2/DigitalEcho.png":
-		Popups.get_node("Panel/Information").text = item_data[name].info
+		Popups.get_node("Panel/Information").text = item_data["DigitalEcho"].info
 	elif texture == "res://assets/card_images_2/HackClock.png":
-		Popups.get_node("Panel/Information").text = item_data[name].info
+		Popups.get_node("Panel/Information").text = item_data["HackClock"].info
 	elif texture == "res://assets/card_images_2/PlasmaPulse.png":
-		Popups.get_node("Panel/Information").text = item_data[name].info
+		Popups.get_node("Panel/Information").text = item_data["PlasmaPulse"].info
 	elif texture == "res://assets/card_images_2/StasisField.png":
-		Popups.get_node("Panel/Information").text = item_data[name].info
+		Popups.get_node("Panel/Information").text = item_data["StasisField"].info
 	elif texture == "res://assets/card_images_2/TemporalRift.png":
-		Popups.get_node("Panel/Information").text = item_data[name].info
+		Popups.get_node("Panel/Information").text = item_data["TemporalRift"].info
 
 func _on_mouse_exited() -> void:
 	Popups.visible = false
