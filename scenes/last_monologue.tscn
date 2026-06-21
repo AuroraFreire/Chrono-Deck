@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://67hsquw6iwr7"]
+
+[ext_resource type="Script" uid="uid://nl5ne63ht2tp" path="res://scripts/Cutscenes/last_scene.gd" id="1_kbxdq"]
+[ext_resource type="FontFile" uid="uid://clgwt0gpfvuta" path="res://Pixel Game.otf" id="2_mf73e"]
+[ext_resource type="AudioStream" uid="uid://bnnl58ksf1dfv" path="res://assets/music/typewriter-typing-68696-_mp3cut.net___cut_0sec_.wav" id="3_h7p7m"]
+[ext_resource type="Texture2D" uid="uid://bi1qx5hi6sd2g" path="res://assets/images2/spacebarIcon.png" id="4_qsoeq"]
+[ext_resource type="AudioStream" uid="uid://bwudwik05jvxa" path="res://assets/music/punch.wav" id="5_kbxdq"]
+[ext_resource type="AudioStream" uid="uid://dja7pnoqlh24i" path="res://assets/music/ear_ring.wav" id="6_ysad7"]
+
+[sub_resource type="Gradient" id="Gradient_j0acm"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_olhk1"]
+gradient = SubResource("Gradient_j0acm")
+fill_from = Vector2(0.013043478, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Animation" id="Animation_mmtbp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qq7ji"]
+resource_name = "flash"
+length = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.16666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_atdhq"]
+_data = {
+&"RESET": SubResource("Animation_mmtbp"),
+&"flash": SubResource("Animation_qq7ji")
+}
+
+[node name="last_monologue" type="Control" unique_id=705866659]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_kbxdq")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1173380378]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="Text" type="RichTextLabel" parent="." unique_id=385011442]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -2.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_fonts/normal_font = ExtResource("2_mf73e")
+theme_override_font_sizes/normal_font_size = 35
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Voice" type="AudioStreamPlayer" parent="." unique_id=136618485]
+
+[node name="typewriter_sfx" type="AudioStreamPlayer" parent="." unique_id=1256244946]
+stream = ExtResource("3_h7p7m")
+volume_db = -15.0
+bus = &"SFX"
+
+[node name="Skip" type="RichTextLabel" parent="." unique_id=1651681856]
+layout_mode = 0
+offset_left = 1456.0
+offset_top = 1019.0
+offset_right = 2012.0
+offset_bottom = 1123.0
+theme_override_fonts/normal_font = ExtResource("2_mf73e")
+theme_override_font_sizes/normal_font_size = 23
+text = "Press                      to Skip (you can't skip now hahah)"
+
+[node name="SpacebarIcon" type="Sprite2D" parent="." unique_id=186987535]
+position = Vector2(1547.3, 1038)
+scale = Vector2(0.10172192, 0.08003816)
+texture = ExtResource("4_qsoeq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1165068128]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("GradientTexture2D_olhk1")
+
+[node name="flash" type="AnimationPlayer" parent="." unique_id=2060706422]
+libraries/ = SubResource("AnimationLibrary_atdhq")
+
+[node name="punch" type="AudioStreamPlayer" parent="." unique_id=1090991227]
+stream = ExtResource("5_kbxdq")
+
+[node name="ring" type="AudioStreamPlayer" parent="." unique_id=513171722]
+stream = ExtResource("6_ysad7")

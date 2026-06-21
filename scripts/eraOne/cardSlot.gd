@@ -53,7 +53,6 @@ func take_damage():
 			card_effect = "SolarStasis"
 			delete_card()
 		if healthbar.health <= 0:
-			await get_tree().create_timer(0.5, false).timeout
 			get_tree().call_deferred("change_scene_to_file", "res://scenes/second_monologue.tscn")
 			return
 

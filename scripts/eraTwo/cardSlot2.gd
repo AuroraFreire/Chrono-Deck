@@ -18,7 +18,7 @@ var current_effect = ""
 func _ready() -> void:
 	texture_progress_bar.process_mode = Node.PROCESS_MODE_DISABLED
 	$"../Countdown".process_mode = Node.PROCESS_MODE_DISABLED
-	healthbar.init_health(80)
+	healthbar.init_health(75)
 	deck_reference = $"../Deck2"
 
 func place_card(card2):
@@ -72,6 +72,9 @@ func take_damage():
 			texture_progress_bar.reduce_time(7)
 			current_effect = "TemporalRift"
 			delete_card()
+		if healthbar.health <= 0:
+			get_tree().call_deferred("change_scene_to_file", "res://scenes/last_monologue.tscn")
+			return
 
 func delete_card():
 	if current_card:

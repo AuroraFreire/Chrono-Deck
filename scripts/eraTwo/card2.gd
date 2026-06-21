@@ -16,7 +16,7 @@ var item_data = {
 "DigitalEcho": preload("res://Resource/DigitalEcho.tres"),
 "PlasmaPulse": preload("res://Resource/PlasmaPulse.tres"),
 "StasisField": preload("res://Resource/StasisField.tres"),
-"TemporaRift": preload("res://Resource/TemporalRift.tres")
+"TemporalRift": preload("res://Resource/TemporalRift.tres")
 }
 
 func _ready() -> void:

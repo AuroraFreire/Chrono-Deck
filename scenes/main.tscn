@@ -340,6 +340,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_0ld40")
 text = "End Turn"
 
 [node name="Popups" parent="." unique_id=859900145 instance=ExtResource("14_a8y0u")]
+visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="Options/Back" to="." method="_on_back_pressed"]

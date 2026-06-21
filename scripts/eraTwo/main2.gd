@@ -1,10 +1,13 @@
 extends Control
 
 @onready var options: Panel = $Options
+@onready var popups = $Popups
 
 func _ready() -> void:
 	options.visible = false
 	options.process_mode = Node.PROCESS_MODE_ALWAYS
+	popups.visible = false
+	GameState.current_level = "two"
 
 func _process(_delta: float) -> void:
 	pass
