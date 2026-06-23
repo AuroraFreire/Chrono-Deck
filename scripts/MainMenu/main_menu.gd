@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_start_pressed() -> void:
-	if GameState.current_level == "null":
+	if GameState.current_level == "":
 		get_tree().change_scene_to_file("res://scenes/first_monologue.tscn")
 	elif GameState.current_level == "one":
 		get_tree().change_scene_to_file("res://scenes/first_monologue.tscn")

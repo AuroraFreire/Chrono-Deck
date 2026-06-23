@@ -152,8 +152,12 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [time-screenshot]: https://cloud-l88kldf50-hack-club-bot.vercel.app/0image.png
 =======
 # Chrono-Deck
-A game where you have to defeat Chronarcs (guardions of time) to free the Time
+A game where you have to defeat Chronarcs (guardions of time) by taking out of the deck and dragging cards to free Time
 
 AI was partially used in the making of the project, alongisde with Godot's documentation and some Youtube Tutorials
 
 You can see where I used AI [here](https://github.com/AuroraFreire/Chrono-Deck/blob/main/Where%20did%20I%20use%20AI.md)
+
+# GAME SHOWCASE ON YOUTUBE:
+
+Link for the Youtube video [HERE]
