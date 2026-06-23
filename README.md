@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <a id="readme-top"></a>
 
 <!-- SHIELDS -->
@@ -154,4 +153,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 =======
 # Chrono-Deck
 A game where you have to defeat Chronarcs (guardions of time) to free the Time
->>>>>>> 1bb208feaacedef8f9f9d84480e545e91449213a
+
+AI was partially used in the making of the project, alongisde with Godot's documentation and some Youtube Tutorials
+
+You can see where I used AI [here](https://github.com/AuroraFreire/Chrono-Deck/blob/main/Where%20did%20I%20use%20AI.md)
